@@ -21,5 +21,13 @@
     <string name="subtitulo">¿Te gusta comprometerte?</string>
     <string name="creditos">CyliconValley</string>
     <string name="title_activity_menu">MenuActivity</string>
-
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="mundo">mundo</string>
+    <string name="perfil">perfil</string>
+    <string name="donaciones">donaciones</string>
+    <string name="proyectos">proyectos</string>
+    <string name="title_activity_mapa">MapaActivity</string>
+    <string name="title_activity_login_failed">LoginFailedActivity</string>
+    <string name="try_to_login">Login again with facebook!</string>
+    <string name="login_failed_please_try_again">Login Failed! Please try again...</string>
 </resources>
