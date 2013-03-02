@@ -1,6 +1,7 @@
 package es.cylicon.yourcommitment.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.parse.ParseObject;
@@ -13,8 +14,8 @@ public class User implements Serializable {
 	private String username;
 	private String email;
 	private Double amount = 0.0D;
-	private List<Donation> donations;
-	private List<Proyect> proyects;
+	private List<Donation> donations = new ArrayList<Donation>();
+	private List<Proyect> proyects = new ArrayList<Proyect>();
 
 	public User(final String username) {
 		this.username = username;
@@ -46,12 +47,12 @@ public class User implements Serializable {
 		this.donations = donations;
 	}
 
-	public Double getAmountLeft() {
+	public Integer getAmountLeft() {
 		Double amountLeft = amount;
 		for (final Donation donation : donations) {
 			amountLeft -= donation.getAmount();
 		}
-		return amountLeft;
+		return (int) Math.floor(amountLeft);
 	}
 
 	public String getUsername() {
@@ -72,8 +73,9 @@ public class User implements Serializable {
 
 	public ParseObject getUserObject() {
 		final ParseObject user = new ParseObject("user");
+		user.put("objectId", id);
 		user.put("username", username);
-		user.put("amount", 0.0D);
+		user.put("amount", amount);
 		return user;
 	}
 
