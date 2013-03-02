@@ -13,6 +13,7 @@ public class Donation implements Serializable {
 	private String name;
 	private String description;
 	private String proyectId;
+	private String userId;
 	private Double amount;
 	private Proyect proyect;
 
@@ -87,5 +88,13 @@ public class Donation implements Serializable {
 
 	public void setProyect(final Proyect proyect) {
 		this.proyect = proyect;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(final String userId) {
+		this.userId = userId;
 	}
 }
