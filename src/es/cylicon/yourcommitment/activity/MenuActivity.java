@@ -1,15 +1,7 @@
 package es.cylicon.yourcommitment.activity;
 
-import android.app.Activity;
-import android.view.Menu;
-import es.cylicon.yourcommitment.R;
+import android.support.v4.app.FragmentActivity;
 
-public class MenuActivity extends Activity {
-
-	@Override
-	public boolean onCreateOptionsMenu(final Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
+public class MenuActivity extends FragmentActivity {
 
 }
