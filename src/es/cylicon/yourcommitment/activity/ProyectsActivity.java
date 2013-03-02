@@ -27,7 +27,7 @@ public class ProyectsActivity extends MenuActivity implements
 		OnItemClickListener {
 
 	private static final int DETALLE_PROYECTO = 0;
-	
+
 	@InjectView(android.R.id.list)
 	private ListView listView;
 
@@ -67,9 +67,8 @@ public class ProyectsActivity extends MenuActivity implements
 	public void onItemClick(final AdapterView<?> arg0, final View arg1,
 			final int posicion, final long arg3) {
 		final Intent intent = new Intent(this, DetailProyectActivity.class);
-		intent.putExtra("proyectId", proyects.get(posicion).getId());
+		intent.putExtra("proyect", proyects.get(posicion));
 		intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
 		startActivityForResult(intent, DETALLE_PROYECTO);
 	}
-
 }
