@@ -1,7 +1,5 @@
 package es.cylicon.yourcommitment.activity;
 
-import java.util.Arrays;
-
 import roboguice.inject.InjectView;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +13,6 @@ import com.parse.GetCallback;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseFacebookUtils;
-import com.parse.ParseFacebookUtils.Permissions;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -33,25 +30,20 @@ public class LoginActivity extends MenuActivity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		layout.setOnClickListener(this);
-
-		ParseFacebookUtils.logIn(Arrays.asList(Permissions.User.EMAIL), this,
-				new LogInCallback() {
-					@Override
-					public void done(final ParseUser user,
-							final ParseException err) {
-						if (user == null) {
-							Log.e(TAG,
-									"Uh oh. The user cancelled the Facebook login.");
-							final Intent intent = new Intent(
-									LoginActivity.this,
-									LoginFailedActivity.class);
-							intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-							startActivity(intent);
-						} else {
-							login(user);
-						}
-					}
-				});
+		ParseFacebookUtils.logIn(this, new LogInCallback() {
+			@Override
+			public void done(final ParseUser user, final ParseException err) {
+				if (user == null) {
+					Log.e(TAG, "Uh oh. The user cancelled the Facebook login.");
+					final Intent intent = new Intent(LoginActivity.this,
+							LoginFailedActivity.class);
+					intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+					startActivity(intent);
+				} else {
+					login(user);
+				}
+			}
+		});
 
 		//login("soraya");
 	}
@@ -99,9 +91,7 @@ public class LoginActivity extends MenuActivity implements OnClickListener {
 			}
 		} else {
 			currentUser = new User(userFound);
-			currentUser.setProyects(getProyects(userFound.getObjectId()));
-			currentUser.setDonations(getDonations(userFound.getObjectId(),
-					currentUser.getProyects()));
+			currentUser.setDonations(getDonations(userFound.getObjectId()));
 		}
 
 		Toast.makeText(LoginActivity.this, "Bienvenido! ", Toast.LENGTH_SHORT)
@@ -121,7 +111,7 @@ public class LoginActivity extends MenuActivity implements OnClickListener {
 
 	@Override
 	public void onClick(final View v) {
-		startActivity(new Intent(this, ProyectsActivity.class));
+		startActivity(new Intent(this, LoginActivity.class));
 	}
 
 }

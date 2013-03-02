@@ -14,7 +14,11 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<<<<<<< HEAD
 
+=======
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+>>>>>>> e75f81e4f2e880c0ab97af101ce91c139c8848b7
     <application
         android:name="es.cylicon.yourcommitment.activity.YourCommitmentApplication"
         android:allowBackup="true"
@@ -76,6 +80,10 @@
             android:name="es.cylicon.yourcommitment.activity.LoginFailedActivity"
             android:label="@string/title_activity_login_failed"
             android:noHistory="true" >
+        </activity>
+        <activity
+            android:name="es.cylicon.yourcommitment.UpdateActivity"
+            android:label="@string/title_activity_update" >
         </activity>
     </application>
 

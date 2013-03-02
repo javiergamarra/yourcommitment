@@ -49,8 +49,10 @@ public class User implements Serializable {
 
 	public Integer getAmountLeft() {
 		Double amountLeft = amount;
-		for (final Donation donation : donations) {
-			amountLeft -= donation.getAmount();
+		if (!donations.isEmpty()) {
+			for (final Donation donation : donations) {
+				amountLeft -= donation.getAmount();
+			}
 		}
 		return (int) Math.floor(amountLeft);
 	}
