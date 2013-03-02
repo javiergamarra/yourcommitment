@@ -1,32 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/itemFondo"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal" >
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+	<LinearLayout    
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="horizontal" >
+	    <ImageView
+	        android:id="@+id/imageCategory"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:contentDescription="@string/description_image"
+	        android:src="@drawable/alimentos" />
+	
+	    <LinearLayout
+	        style="@style/itemText"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="3" >
+	
+	        <TextView
+	            android:id="@+id/name_donation"
+	            style="@style/itemName"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/texto_hint" />
+	
+	        <TextView
+	            android:id="@+id/name_proyect"
+	            style="@style/itemDescription"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="@string/texto_hint" />
+	    </LinearLayout>
+	
+	    <ImageView
+	        android:id="@+id/arrowNext"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:contentDescription="@string/description_image"
+	        android:src="@drawable/arrownext" />
+	
+	</LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/name_donation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/texto_hint" />
-
-        <TextView
-            android:id="@+id/name_proyect"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/texto_hint" />
+	<ImageView
+	    android:id="@+id/separador"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:contentDescription="@string/description_image"
+	    android:paddingTop="10dp"
+	    android:src="@drawable/separator" />
+    
     </LinearLayout>
-
-    <ImageView
-        android:id="@+id/arrowNext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/arrownext" 
-        android:contentDescription="@string/description_image"/>
-
-</LinearLayout>

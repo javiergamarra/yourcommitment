@@ -12,4 +12,24 @@
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    <style name="itemFondo">
+        <item name="android:background">@color/lightCream</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
+    <style name="itemText">
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingTop">5dp</item>
+    </style>
+    <style name="itemName" parent="android:Widget.Holo.Light.TextView">
+        <item name="android:textColor">@color/darkBrown</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="itemDescription" parent="android:Widget.Holo.Light.TextView">
+        <item name="android:textColor">@color/lightBrown</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>
