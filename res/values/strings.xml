@@ -38,4 +38,5 @@
     <string name="userNameLabel">Nombre:</string>
     <string name="userEmailLabel">E-mail:</string>
     <string name="tituloTablaProyectos">Lista de Proyectos</string>
+    <string name="nombre_del_proyecto">Nombre del proyecto</string>
 </resources>
