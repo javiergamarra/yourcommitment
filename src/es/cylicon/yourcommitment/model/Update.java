@@ -2,19 +2,28 @@ package es.cylicon.yourcommitment.model;
 
 import java.io.Serializable;
 
+import com.parse.ParseObject;
+
 public class Update implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String name;
+	private String description;
 	private String image;
 
-	public String getName() {
-		return name;
+	
+	public Update(final ParseObject parseProyect) {
+		setDescription(parseProyect.getString("description"));
+		setImage(parseProyect.getString("image"));
+	}
+	
+	
+	public String getDescription() {
+		return description;
 	}
 
-	public void setName(final String name) {
-		this.name = name;
+	public void setDescription(final String description) {
+		this.description = description;
 	}
 
 	public String getImage() {

@@ -13,8 +13,9 @@
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:adjustViewBounds="true"
-        android:src="@drawable/splashscreen" />
+        android:adjustViewBounds="true"        
+        android:src="@drawable/splashscreen" 
+        android:contentDescription="@string/description_image"/>
     <ImageView
         android:id="@+id/ImagenViewLogo"
         android:layout_width="wrap_content"
@@ -22,5 +23,6 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:adjustViewBounds="true"
-        android:src="@drawable/logosplashscreen" />
+        android:src="@drawable/logosplashscreen"
+        android:contentDescription="@string/description_image" />
 </RelativeLayout>

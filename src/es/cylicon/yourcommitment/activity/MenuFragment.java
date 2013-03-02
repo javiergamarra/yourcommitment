@@ -23,6 +23,9 @@ public class MenuFragment extends RoboFragment implements OnClickListener {
 	@InjectView(R.id.proyects)
 	private TextView proyects;
 
+	@InjectView(R.id.amountLeft)
+	private TextView amountLeft;
+
 	@Override
 	public View onCreateView(final LayoutInflater inflater,
 			final ViewGroup container, final Bundle savedInstanceState) {
@@ -36,6 +39,10 @@ public class MenuFragment extends RoboFragment implements OnClickListener {
 		proyects.setOnClickListener(this);
 		map.setOnClickListener(this);
 		clickMenu();
+		final YourCommitmentApplication application = (YourCommitmentApplication) getActivity()
+				.getApplication();
+		amountLeft.setText(application.getCurrentUser().getAmount().toString()
+				+ "€");
 	}
 
 	private void clickMenu() {

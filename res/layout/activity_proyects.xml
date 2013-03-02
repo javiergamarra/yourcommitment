@@ -5,13 +5,22 @@
     android:background="@color/lightCream"
     android:orientation="vertical"
     tools:context=".ProyectsActivity" >
+
     <fragment
         android:id="@+id/proyectsActivity"
         android:name="es.cylicon.yourcommitment.activity.MenuFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <TextView
+        style="@style/tituloTabla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tituloTablaProyectos" />
+
     <ListView
         android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
 </LinearLayout>

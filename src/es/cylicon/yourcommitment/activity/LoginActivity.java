@@ -1,5 +1,7 @@
 package es.cylicon.yourcommitment.activity;
 
+import java.util.Arrays;
+
 import roboguice.inject.InjectView;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +15,7 @@ import com.parse.GetCallback;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseFacebookUtils;
+import com.parse.ParseFacebookUtils.Permissions;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -31,26 +34,29 @@ public class LoginActivity extends MenuActivity implements OnClickListener {
 		setContentView(R.layout.activity_main);
 		layout.setOnClickListener(this);
 
-		ParseFacebookUtils.logIn(this, new LogInCallback() {
-			@Override
-			public void done(final ParseUser user, final ParseException err) {
-				if (user == null) {
-					Log.e(TAG, "Uh oh. The user cancelled the Facebook login.");
-					final Intent intent = new Intent(LoginActivity.this,
-							LoginFailedActivity.class);
-					intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-					startActivity(intent);
-				} else {
-					login(user);
-				}
-			}
-		});
+		ParseFacebookUtils.logIn(Arrays.asList(Permissions.User.EMAIL), this,
+				new LogInCallback() {
+					@Override
+					public void done(final ParseUser user,
+							final ParseException err) {
+						if (user == null) {
+							Log.e(TAG,
+									"Uh oh. The user cancelled the Facebook login.");
+							final Intent intent = new Intent(
+									LoginActivity.this,
+									LoginFailedActivity.class);
+							intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+							startActivity(intent);
+						} else {
+							login(user);
+						}
+					}
+				});
 
 	}
 
 	private void login(final ParseUser user) {
-		Log.e(TAG, "User logged in through Facebook!" + user.getUsername()
-				+ user.getEmail());
+		Log.e(TAG, "User logged in through Facebook!" + user.getUsername());
 
 		final ParseQuery query = new ParseQuery("user");
 		query.whereEqualTo("username", user.getUsername())
@@ -58,27 +64,34 @@ public class LoginActivity extends MenuActivity implements OnClickListener {
 					@Override
 					public void done(final ParseObject userFound,
 							final ParseException e) {
-						final User currentUser;
-						if (userFound == null) {
-							currentUser = new User(user.getUsername());
-							try {
-								currentUser.getUserObject().save();
-							} catch (final ParseException e1) {
-								e1.printStackTrace();
-							}
-						} else {
-							currentUser = new User(userFound);
-						}
-						Toast.makeText(LoginActivity.this,
-								"Bienvenido! " + currentUser.getUsername(),
-								Toast.LENGTH_SHORT).show();
-						final YourCommitmentApplication application = (YourCommitmentApplication) getApplication();
-
-						application.setCurrentUser(currentUser);
-						startActivity(new Intent(LoginActivity.this,
-								ProyectsActivity.class));
+						processUser(user, userFound);
 					}
 				});
+	}
+
+	private void processUser(final ParseUser user, final ParseObject userFound) {
+		final User currentUser;
+		if (userFound == null) {
+			currentUser = new User(user.getUsername());
+			try {
+				currentUser.getUserObject().save();
+			} catch (final ParseException e1) {
+				Toast.makeText(this, "No se ha podido guardar el usuario",
+						Toast.LENGTH_SHORT).show();
+			}
+		} else {
+			currentUser = new User(userFound);
+			currentUser.setProyects(getProyects(userFound.getObjectId()));
+			currentUser.setDonations(getDonations(userFound.getObjectId(),
+					currentUser.getProyects()));
+		}
+
+		Toast.makeText(LoginActivity.this, "Bienvenido! ", Toast.LENGTH_SHORT)
+				.show();
+		final YourCommitmentApplication application = (YourCommitmentApplication) getApplication();
+
+		application.setCurrentUser(currentUser);
+		startActivity(new Intent(LoginActivity.this, ProyectsActivity.class));
 	}
 
 	@Override

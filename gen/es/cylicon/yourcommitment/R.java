@@ -19,9 +19,10 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int darkBrown=0x7f050004;
+        public static final int darkBrown=0x7f050005;
         public static final int darkCream=0x7f050001;
-        public static final int lightBrown=0x7f050003;
+        public static final int darkOrange=0x7f050003;
+        public static final int lightBrown=0x7f050004;
         public static final int lightCream=0x7f050000;
         public static final int orange=0x7f050002;
     }
@@ -61,32 +62,33 @@ public final class R {
         public static final int splashscreen=0x7f020015;
     }
     public static final class id {
-        public static final int ImagenViewLogo=0x7f0a0004;
-        public static final int ImagenViewTop=0x7f0a0003;
-        public static final int action_settings=0x7f0a0019;
-        public static final int arrowNext=0x7f0a0013;
+        public static final int ImagenViewLogo=0x7f0a0003;
+        public static final int ImagenViewTop=0x7f0a0002;
+        public static final int action_settings=0x7f0a001a;
+        public static final int amountLeft=0x7f0a0015;
+        public static final int arrowNext=0x7f0a000a;
         public static final int descripcion=0x7f0a0009;
-        public static final int imageCategory=0x7f0a0010;
-        public static final int login=0x7f0a0002;
-        public static final int map=0x7f0a0017;
+        public static final int imageCategory=0x7f0a0011;
+        public static final int login=0x7f0a0001;
+        public static final int map=0x7f0a0018;
         public static final int mapActivity=0x7f0a0005;
-        public static final int menu=0x7f0a0000;
-        public static final int menu_settings=0x7f0a0018;
-        public static final int name_donation=0x7f0a0011;
-        public static final int name_proyect=0x7f0a0012;
-        public static final int profile=0x7f0a0015;
+        public static final int menu=0x7f0a0004;
+        public static final int menu_settings=0x7f0a0019;
+        public static final int name_donation=0x7f0a0012;
+        public static final int name_proyect=0x7f0a0013;
+        public static final int profile=0x7f0a0016;
         public static final int profileActivity=0x7f0a0006;
-        public static final int proyects=0x7f0a0016;
+        public static final int proyects=0x7f0a0017;
         public static final int proyectsActivity=0x7f0a0007;
         public static final int separador=0x7f0a0014;
         public static final int titulo=0x7f0a0008;
-        public static final int tryToLogin=0x7f0a0001;
-        public static final int userAmount=0x7f0a000e;
-        public static final int userAmountLeft=0x7f0a000f;
-        public static final int userEmail=0x7f0a000d;
-        public static final int userEmailLabel=0x7f0a000c;
-        public static final int userName=0x7f0a000b;
-        public static final int userNameLabel=0x7f0a000a;
+        public static final int tryToLogin=0x7f0a0000;
+        public static final int userAmount=0x7f0a000f;
+        public static final int userAmountLeft=0x7f0a0010;
+        public static final int userEmail=0x7f0a000e;
+        public static final int userEmailLabel=0x7f0a000d;
+        public static final int userName=0x7f0a000c;
+        public static final int userNameLabel=0x7f0a000b;
     }
     public static final class layout {
         public static final int activity_detail_proyect=0x7f030000;
@@ -105,16 +107,18 @@ public final class R {
     }
     public static final class menu {
         public static final int activity_user=0x7f090000;
-        public static final int detail_proyect=0x7f090001;
-        public static final int login_failed=0x7f090002;
-        public static final int main=0x7f090003;
-        public static final int mapa=0x7f090004;
-        public static final int menu=0x7f090005;
-        public static final int profile=0x7f090006;
-        public static final int proyects=0x7f090007;
-        public static final int splash=0x7f090008;
+        public static final int detail_detail_proyect=0x7f090001;
+        public static final int detail_proyect=0x7f090002;
+        public static final int login_failed=0x7f090003;
+        public static final int main=0x7f090004;
+        public static final int mapa=0x7f090005;
+        public static final int menu=0x7f090006;
+        public static final int profile=0x7f090007;
+        public static final int proyects=0x7f090008;
+        public static final int splash=0x7f090009;
     }
     public static final class string {
+        public static final int _0_0_=0x7f07001e;
         public static final int action_settings=0x7f07000d;
         public static final int amountUser=0x7f07000a;
         public static final int app_id=0x7f070002;
@@ -144,12 +148,13 @@ public final class R {
         public static final int title_activity_proyects=0x7f07000c;
         public static final int title_activity_splash=0x7f07000f;
         public static final int title_activity_user=0x7f070009;
-        public static final int tituloTablaDonaciones=0x7f07001e;
+        public static final int tituloTablaDonaciones=0x7f07001f;
+        public static final int tituloTablaProyectos=0x7f070024;
         public static final int try_to_login=0x7f07001b;
-        public static final int userEmail=0x7f070020;
-        public static final int userEmailLabel=0x7f070022;
-        public static final int userName=0x7f07001f;
-        public static final int userNameLabel=0x7f070021;
+        public static final int userEmail=0x7f070021;
+        public static final int userEmailLabel=0x7f070023;
+        public static final int userName=0x7f070020;
+        public static final int userNameLabel=0x7f070022;
     }
     public static final class style {
         /** 
@@ -157,7 +162,9 @@ public final class R {
         res/values-vXX/styles.xml, while customizations related to
         backward-compatibility can go here.
 
-    
+
+
+        
 
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
@@ -176,11 +183,13 @@ public final class R {
          */
         public static final int AppTheme=0x7f080001;
         public static final int Fondo=0x7f080002;
-        public static final int fields=0x7f080008;
+        public static final int fields=0x7f080009;
         public static final int itemDescription=0x7f080006;
         public static final int itemFondo=0x7f080003;
         public static final int itemMenu=0x7f080007;
         public static final int itemName=0x7f080005;
         public static final int itemText=0x7f080004;
+        public static final int titulo=0x7f080008;
+        public static final int tituloTabla=0x7f08000a;
     }
 }

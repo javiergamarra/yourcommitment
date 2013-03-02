@@ -1,35 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="?android:attr/listPreferredItemHeight"
-    android:padding="6dip" >
+    style="@style/itemFondo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
 
-    <ImageView
-        android:layout_width="50dip"
-        android:layout_height="50dip"
-        android:layout_marginRight="6dip"
-        android:src="@android:drawable/ic_menu_agenda" />
 
-    <LinearLayout
-        android:layout_width="0dip"
-        android:layout_height="fill_parent"
-        android:layout_weight="1"
-        android:orientation="vertical" >
+		    <ImageView
+		        android:layout_width="50dip"
+		        android:layout_height="50dip"
+		        android:layout_marginRight="6dip"
+		        android:contentDescription="@string/description_image"
+		        android:src="@android:drawable/ic_menu_agenda" />
 
-        <TextView
-            android:id="@+id/titulo"
-            android:layout_width="fill_parent"
-            android:layout_height="0dip"
-            android:layout_weight="1"
-            android:gravity="center_vertical" />
+		    <LinearLayout
+		        style="@style/itemText"
+		        android:layout_width="0dp"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="3" >
 
-        <TextView
-            android:id="@+id/descripcion"
-            android:layout_width="fill_parent"
-            android:layout_height="0dip"
-            android:layout_weight="1"
-            android:ellipsize="marquee"
-            android:singleLine="true" />
-    </LinearLayout>
-
+		        <TextView
+		            android:id="@+id/titulo"
+		            style="@style/itemName"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content" />
+		
+		        <TextView
+		            android:id="@+id/descripcion"
+		            style="@style/itemDescription"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:singleLine="true" />
+    		</LinearLayout>
+    		
+	    	<ImageView
+		        android:id="@+id/arrowNext"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:contentDescription="@string/description_image"
+		        android:src="@drawable/arrownext" />
 </LinearLayout>
+
+

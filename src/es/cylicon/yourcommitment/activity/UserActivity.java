@@ -47,7 +47,7 @@ public class UserActivity extends RoboFragmentActivity implements
 
 		userName.setText(user.getUsername());
 		userEmail.setText(user.getEmail());
-		
+
 		final Double cantidad = user.getAmount();
 		amount.setText((cantidad == null ? 0 : cantidad.toString()) + MONEDA);
 		amountLeft.setText(user.getAmountLeft().toString() + MONEDA);
