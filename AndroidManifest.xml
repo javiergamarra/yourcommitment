@@ -3,15 +3,18 @@
     package="es.cylicon.yourcommitment"
     android:versionCode="1"
     android:versionName="1.0" >
+
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name="es.cylicon.yourcommitment.activity.YourCommitmentApplication"
         android:allowBackup="true"
@@ -21,23 +24,21 @@
         <activity
             android:name="es.cylicon.yourcommitment.activity.LoginActivity"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name="com.facebook.LoginActivity" />
+
         <service android:name="com.parse.PushService" />
+
         <receiver android:name="com.parse.ParseBroadcastReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.USER_PRESENT" />
             </intent-filter>
         </receiver>
+
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/app_id" />
-
         <activity
             android:name="es.cylicon.yourcommitment.activity.UserActivity"
             android:label="@string/title_activity_user" >
@@ -51,8 +52,16 @@
             android:label="@string/title_activity_detail_proyect" >
         </activity>
         <activity
-            android:name="es.cylicon.yourcommitment.SplashActivity"
+            android:name="es.cylicon.yourcommitment.activity.SplashActivity"
             android:label="@string/title_activity_splash" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="es.cylicon.yourcommitment.activity.MenuActivity"
+            android:label="@string/title_activity_menu" >
         </activity>
         <activity
             android:name="es.cylicon.yourcommitment.MapActivity"
@@ -63,4 +72,5 @@
             android:label="@string/title_activity_login_failed" >
         </activity>
     </application>
+
 </manifest>
