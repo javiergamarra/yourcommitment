@@ -12,17 +12,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <TextView
+        style="@style/tituloTabla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:text="@string/tituloUser" />
+    
     <LinearLayout
         style="@style/fields"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
 
         <TextView
             android:id="@+id/userNameLabel"
+            style="@style/labelFields"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/userNameLabel"
-            android:paddingRight="5dp" />
+            android:hint="@string/userNameLabel" />
 
         <TextView
             android:id="@+id/userName"
@@ -34,14 +41,14 @@
     <LinearLayout
         style="@style/fields"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="wrap_content" >
 
         <TextView
             android:id="@+id/userEmailLabel"
+            style="@style/labelFields"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/userEmailLabel"
-            android:paddingRight="5dp" />
+            android:hint="@string/userEmailLabel"/>
 
         <TextView
             android:id="@+id/userEmail"
@@ -51,21 +58,33 @@
     </LinearLayout>
 
     <LinearLayout
-        style="@style/fields"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
+        android:layout_height="wrap_content" >
+ 
         <TextView
             android:id="@+id/userAmount"
+            style="@style/labelFields"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/amountUser" />
+        
+        <SeekBar
+            android:id="@+id/seekBar1"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"            
+           	android:max="10000"
+           	android:progress="50"
+            android:layout_weight="1" />
+
     </LinearLayout>
 
     <LinearLayout
         style="@style/fields"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:paddingBottom="10dp" >
 
         <TextView
@@ -76,15 +95,16 @@
     </LinearLayout>
 
     <TextView
+        style="@style/tituloTabla"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/darkCream"
-        android:text="@string/tituloTablaDonaciones"
-        android:textColor="@color/darkBrown" />
+        android:paddingTop="10dp"
+        android:text="@string/tituloTablaDonaciones" />
 
     <ListView
         android:id="@android:id/list"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
 </LinearLayout>
