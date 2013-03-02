@@ -60,6 +60,7 @@ public class ProyectsActivity extends ListActivity {
 			final int posicion, final long id) {
 		super.onListItemClick(lista, vista, posicion, id);
 		final Intent intent = new Intent(this, DetailProyectActivity.class);
+		intent.putExtra("proyectId", proyects.get(posicion).getId());
 		startActivityForResult(intent, DETALLE_PROYECTO);
 	}
 
