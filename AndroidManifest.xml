@@ -39,7 +39,7 @@
             android:value="@string/app_id" />
 
         <activity
-            android:name="es.cylicon.yourcommitment.UserActivity"
+            android:name="es.cylicon.yourcommitment.activity.UserActivity"
             android:label="@string/title_activity_user" >
         </activity>
         <activity

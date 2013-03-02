@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:contentDescription="@string/imagen"
-        android:drawableTop="@android:drawable/btn_star"
+        android:drawableTop="@drawable/acceptprojectsicon"
         android:gravity="center_horizontal"
         android:text="@string/donaciones" />
     <TextView
@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:contentDescription="@string/imagen"
-        android:drawableTop="@android:drawable/btn_star"
+        android:drawableTop="@drawable/profileicon"
         android:gravity="center_horizontal"
         android:text="@string/perfil" />
     <TextView
