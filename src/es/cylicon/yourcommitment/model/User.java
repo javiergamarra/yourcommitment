@@ -9,7 +9,7 @@ public class User implements Serializable {
 
 	private String login;
 	private String password;
-	private List<Item> items;
+	private List<Donation> donations;
 	private List<Organization> ongs;
 	private Double amount;
 
@@ -37,20 +37,28 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	public List<Item> getItems() {
-		return items;
-	}
-
-	public void setItems(final List<Item> items) {
-		this.items = items;
-	}
-
 	public List<Organization> getOngs() {
 		return ongs;
 	}
 
 	public void setOngs(final List<Organization> ongs) {
 		this.ongs = ongs;
+	}
+
+	public List<Donation> getDonations() {
+		return donations;
+	}
+
+	public void setDonations(final List<Donation> donations) {
+		this.donations = donations;
+	}
+
+	public Double getAmountLeft() {
+		Double amountLeft = amount;
+		for (final Donation donation : donations) {
+			amountLeft -= donation.getAmount();
+		}
+		return amountLeft;
 	}
 
 }

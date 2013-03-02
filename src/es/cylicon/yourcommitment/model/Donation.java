@@ -2,11 +2,12 @@ package es.cylicon.yourcommitment.model;
 
 import java.io.Serializable;
 
-public class Item implements Serializable {
+public class Donation implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	private String name;
+	private String description;
 	private Proyect proyect;
 	private Double amount;
 
@@ -32,6 +33,14 @@ public class Item implements Serializable {
 
 	public void setAmount(final Double amount) {
 		this.amount = amount;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(final String description) {
+		this.description = description;
 	}
 
 }

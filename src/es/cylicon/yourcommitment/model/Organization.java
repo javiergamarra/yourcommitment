@@ -10,6 +10,7 @@ public class Organization implements Serializable {
 	private String name;
 	private String email;
 	private String address;
+	private String image;
 	private List<Proyect> proyects = new ArrayList<Proyect>();
 
 	public String getName() {
@@ -42,6 +43,14 @@ public class Organization implements Serializable {
 
 	public void setProyects(final List<Proyect> proyects) {
 		this.proyects = proyects;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(final String image) {
+		this.image = image;
 	}
 
 }
