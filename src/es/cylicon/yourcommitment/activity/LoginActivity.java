@@ -1,8 +1,13 @@
 package es.cylicon.yourcommitment.activity;
 
+import roboguice.inject.InjectView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.parse.GetCallback;
 import com.parse.LogInCallback;
@@ -12,24 +17,29 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
-import es.cylicon.yourcommitment.MapActivity;
 import es.cylicon.yourcommitment.R;
 import es.cylicon.yourcommitment.model.User;
 
-public class LoginActivity extends MenuActivity {
+public class LoginActivity extends MenuActivity implements OnClickListener {
+
+	@InjectView(R.id.login)
+	private RelativeLayout layout;
 
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		layout.setOnClickListener(this);
 
 		ParseFacebookUtils.logIn(this, new LogInCallback() {
 			@Override
 			public void done(final ParseUser user, final ParseException err) {
 				if (user == null) {
 					Log.e(TAG, "Uh oh. The user cancelled the Facebook login.");
-					startActivity(new Intent(LoginActivity.this,
-							LoginFailedActivity.class));
+					final Intent intent = new Intent(LoginActivity.this,
+							LoginFailedActivity.class);
+					intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+					startActivity(intent);
 				} else {
 					login(user);
 				}
@@ -59,12 +69,14 @@ public class LoginActivity extends MenuActivity {
 						} else {
 							currentUser = new User(userFound);
 						}
-
+						Toast.makeText(LoginActivity.this,
+								"Bienvenido! " + currentUser.getUsername(),
+								Toast.LENGTH_SHORT).show();
 						final YourCommitmentApplication application = (YourCommitmentApplication) getApplication();
 
 						application.setCurrentUser(currentUser);
 						startActivity(new Intent(LoginActivity.this,
-								MapActivity.class));
+								ProyectsActivity.class));
 					}
 				});
 	}
@@ -74,6 +86,11 @@ public class LoginActivity extends MenuActivity {
 			final int resultCode, final Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		ParseFacebookUtils.finishAuthentication(requestCode, resultCode, data);
+	}
+
+	@Override
+	public void onClick(final View v) {
+		startActivity(new Intent(this, ProyectsActivity.class));
 	}
 
 }

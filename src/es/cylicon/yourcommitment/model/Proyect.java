@@ -9,6 +9,7 @@ public class Proyect implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	private String id;
 	private String name;
 	private String description;
 	private Double totalAmount;
@@ -22,8 +23,17 @@ public class Proyect implements Serializable {
 	}
 
 	public Proyect(final ParseObject parseProyect) {
+		setId(parseProyect.getString("objectId"));
 		setName(parseProyect.getString("name"));
 		setDescription(parseProyect.getString("description"));
+	}
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public List<Update> getUpdates() {

@@ -21,8 +21,8 @@
             android:id="@+id/userNameLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingRight="5dp"
-            android:hint="@string/userNameLabel" />
+            android:hint="@string/userNameLabel"
+            android:paddingRight="5dp" />
 
         <TextView
             android:id="@+id/userName"
@@ -35,45 +35,46 @@
         style="@style/fields"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
-       
+
         <TextView
             android:id="@+id/userEmailLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingRight="5dp"
-            android:hint="@string/userEmailLabel" />
-        
-	    <TextView
-	        android:id="@+id/userEmail"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:hint="@string/userEmail" />
-	
-	</LinearLayout>
-	
+            android:hint="@string/userEmailLabel"
+            android:paddingRight="5dp" />
+
+        <TextView
+            android:id="@+id/userEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/userEmail" />
+    </LinearLayout>
+
     <LinearLayout
         style="@style/fields"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
-    <TextView
-	        android:id="@+id/userAmount"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:hint="@string/amountUser" />
-	</LinearLayout>
-	
+
+        <TextView
+            android:id="@+id/userAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/amountUser" />
+    </LinearLayout>
+
     <LinearLayout
         style="@style/fields"
-        android:paddingBottom="10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-    
-	    <TextView
-	        android:id="@+id/userAmountDonation"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:text="@string/donationAmountUser" />
-	</LinearLayout>
+        android:layout_height="match_parent"
+        android:paddingBottom="10dp" >
+
+        <TextView
+            android:id="@+id/userAmountDonation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/donationAmountUser" />
+    </LinearLayout>
+
 
     <TextView
         android:layout_width="match_parent"
