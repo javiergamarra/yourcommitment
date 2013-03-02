@@ -66,8 +66,8 @@ public class SplashActivity extends Activity {
 			public void onAnimationRepeat(Animation animation) {}
 			
 			@Override
-			public void onAnimationEnd(Animation animation) {
-				startActivity(new Intent(SplashActivity.this , MainActivity.class));
+			public void onAnimationEnd(Animation animation) { 
+				startActivity(new Intent(SplashActivity.this , LoginActivity.class));
 				finish();
 			}
 		});
