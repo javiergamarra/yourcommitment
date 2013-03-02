@@ -32,6 +32,10 @@ public class DetailProyectActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_detail_proyect);
 
+		Bundle extras = getIntent().getExtras();
+		int proyectId = extras.getInt("proyectId");
+		
+		
 		loadUpdates();
 		adapter = new UpdateAdapter(this, android.R.layout.simple_list_item_1,
 				updates);
