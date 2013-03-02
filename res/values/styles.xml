@@ -17,14 +17,9 @@
     
     <style name="Fondo">
         <item name="android:background">@color/lightCream</item>
-         <item name="android:paddingBottom">@dimen/activity_vertical_margin</item>
-        <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
-        <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
-        <item name="android:paddingTop">@dimen/activity_vertical_margin</item>
     </style>
     
     <style name="itemFondo">
-        <item name="android:background">@color/lightCream</item>
         <item name="android:paddingTop">10dp</item>
         <item name="android:paddingLeft">10dp</item>
         <item name="android:paddingRight">10dp</item>
@@ -49,5 +44,10 @@
         <item name="android:drawablePadding">15dip</item>
         <item name="android:padding">10dip</item>
         <item name="android:background">@color/darkCream</item>
+    </style>
+    <style name="fields">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingTop">10dp</item>
     </style>
 </resources>
