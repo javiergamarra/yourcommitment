@@ -52,5 +52,5 @@
 	    android:contentDescription="@string/description_image"
 	    android:paddingTop="10dp"
 	    android:src="@drawable/separator" />
-    
-    </LinearLayout>
+
+	</LinearLayout>
