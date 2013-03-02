@@ -1,7 +1,6 @@
 package es.cylicon.yourcommitment.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 import com.parse.ParseObject;
@@ -16,6 +15,7 @@ public class Donation implements Serializable {
 	private String proyectId;
 	private Double amount;
 	private Proyect proyect;
+
 	
 	public ParseObject getDonationObject() {
 		final ParseObject donation = new ParseObject("Donation");
@@ -26,6 +26,7 @@ public class Donation implements Serializable {
 		return donation;
 	}
 	
+
 	public Donation(final ParseObject parseDonation) {
 		setId(parseDonation.getString("objectId"));
 		setName(parseDonation.getString("name"));
@@ -36,7 +37,7 @@ public class Donation implements Serializable {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(final String id) {
 		this.id = id;
 	}
 
@@ -81,15 +82,6 @@ public class Donation implements Serializable {
 
 	public void setDescription(final String description) {
 		this.description = description;
-	}
-
-	public static List<Donation> createDonations(
-			final List<ParseObject> objects, final List<Proyect> proyects) {
-		final List<Donation> donations = new ArrayList<Donation>();
-		for (final ParseObject object : objects) {
-			donations.add(new Donation(object, proyects));
-		}
-		return donations;
 	}
 
 	public String getProyectId() {

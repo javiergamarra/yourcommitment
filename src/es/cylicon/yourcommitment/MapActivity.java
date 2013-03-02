@@ -1,22 +1,21 @@
 package es.cylicon.yourcommitment;
 
+import roboguice.inject.InjectView;
 import android.os.Bundle;
-import android.view.Menu;
+import android.webkit.WebView;
 import es.cylicon.yourcommitment.activity.MenuActivity;
 
 public class MapActivity extends MenuActivity {
+
+	@InjectView(R.id.mapa)
+	private WebView webView;
 
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_mapa);
+		webView.getSettings().setJavaScriptEnabled(true);
+		webView.getSettings().setPluginsEnabled(true);
+		webView.loadUrl("http://yourcommitment.org/");
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(final Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.mapa, menu);
-		return true;
-	}
-
 }

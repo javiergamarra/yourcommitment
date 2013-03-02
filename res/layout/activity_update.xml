@@ -2,16 +2,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lightCream"
     android:orientation="vertical"
-    tools:context=".MapActivity" >
+    tools:context=".UpdateActivity" >
     <fragment
         android:id="@+id/menu"
         android:name="es.cylicon.yourcommitment.activity.MenuFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-    <WebView 
-        android:id="@+id/mapa"
+    <TextView
+        android:id="@+id/proyectName"
+        style="@style/tituloTabla"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:text="@string/tituloTablaActualizaciones" />
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
 </LinearLayout>

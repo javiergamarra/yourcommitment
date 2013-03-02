@@ -21,7 +21,6 @@ public class YourCommitmentApplication extends android.app.Application {
 		Parse.initialize(this, TOKEN, KEY);
 		ParseFacebookUtils.initialize(getString(R.string.app_id));
 		registerForPushForChannelAndActivity("Example", LoginActivity.class);
-
 	}
 
 	public User getCurrentUser() {
