@@ -7,6 +7,7 @@ import roboguice.activity.RoboFragmentActivity;
 import android.widget.Toast;
 
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 import es.cylicon.yourcommitment.model.Donation;
@@ -22,26 +23,32 @@ public class MenuActivity extends RoboFragmentActivity {
 		overridePendingTransition(0, 0);
 	}
 
-	protected List<Proyect> getProyects(final String userId) {
-		final ParseQuery userProyectQuery = new ParseQuery("UserProyect");
+	protected Proyect getProjectForADonation(final String projectId) {
+		final ParseQuery proyectQuery = new ParseQuery("Proyect");
 		try {
-			return Proyect.createProyects(userProyectQuery.whereEqualTo(
-					"user_id", userId).find());
+			return new Proyect(proyectQuery.whereEqualTo("objectId", projectId)
+					.getFirst());
 		} catch (final ParseException e1) {
 			Toast.makeText(this,
 					"No se ha podido recuperar la información de proyectos",
 					Toast.LENGTH_SHORT).show();
 		}
-		return new ArrayList<Proyect>();
+		return new Proyect();
 	}
 
-	protected List<Donation> getDonations(final String userId,
-			final List<Proyect> proyects) {
+	protected List<Donation> getDonations(final String userId) {
 		final ParseQuery donationsQuery = new ParseQuery("Donation");
 		try {
-			return Donation.createDonations(
-					donationsQuery.whereEqualTo("user_id", userId).find(),
-					proyects);
+			final List<Donation> donations = new ArrayList<Donation>();
+			for (final ParseObject object : donationsQuery.whereEqualTo(
+					"user_id", userId).find()) {
+				final Donation donation = new Donation(object);
+				final Proyect proyect = getProjectForADonation(donation
+						.getProyectId());
+				donation.setProyect(proyect);
+				donations.add(donation);
+			}
+			return donations;
 		} catch (final ParseException e1) {
 			Toast.makeText(this,
 					"No se ha podido recuperar la información de donaciones",

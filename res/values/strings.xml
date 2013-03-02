@@ -46,4 +46,6 @@
     <string name="terminado">Terminado</string>
     <string name="recaudado">Recaudado</string>
     <string name="total">Total</string>
+    <string name="ver_actualizaciones">Ver actualizaciones</string>
+    <string name="title_activity_update">UpdateActivity</string>
 </resources>

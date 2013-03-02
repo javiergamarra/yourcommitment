@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
         android:text="@string/tituloUser" />
-    
+
     <LinearLayout
         style="@style/fields"
         android:layout_width="wrap_content"
@@ -48,7 +48,7 @@
             style="@style/labelFields"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/userEmailLabel"/>
+            android:hint="@string/userEmailLabel" />
 
         <TextView
             android:id="@+id/userEmail"
@@ -58,40 +58,32 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
- 
+        android:paddingTop="10dp" >
+
         <TextView
             android:id="@+id/userAmount"
             style="@style/labelFields"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/amountUser" />
-        
+
         <SeekBar
             android:id="@+id/seekBar1"
             android:layout_width="match_parent"
-            android:layout_height="0dip"            
-           	android:max="10000"
-           	android:progress="50"
-            android:layout_weight="1" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        style="@style/fields"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="10dp" >
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:max="10000"
+            android:progress="50" />
 
         <TextView
-            android:id="@+id/userAmountLeft"
+            android:id="@+id/saldo"
+            style="@style/labelFields"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/donationAmountUser" />
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
     <TextView
