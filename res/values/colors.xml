@@ -3,6 +3,7 @@
     <color name="lightCream">#f4f0ed</color>
     <color name="darkCream">#e8dfd9</color>
     <color name="orange">#f68d5d</color>
+    <color name="darkOrange">#e57e4f</color>
     <color name="lightBrown">#bcb3a8</color>
     <color name="darkBrown">#626262</color>
 </resources>

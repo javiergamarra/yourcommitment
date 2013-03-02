@@ -31,6 +31,7 @@
     <string name="try_to_login">Log again with facebook!</string>
     <string name="login_failed_please_try_again">Login Failed! Please try again...</string>
     <string name="map">AQUI VA UN MAPA</string>
+    <string name="_0_0_">0.0€</string>
     <string name="tituloTablaDonaciones">Lista de Donaciones</string>
     <string name="userName">Nombre</string>
     <string name="userEmail">E-mail</string>

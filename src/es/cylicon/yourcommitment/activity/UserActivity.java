@@ -12,7 +12,6 @@ import android.widget.TextView;
 import es.cylicon.yourcommitment.R;
 import es.cylicon.yourcommitment.adapter.DonationAdapter;
 import es.cylicon.yourcommitment.model.Donation;
-import es.cylicon.yourcommitment.model.Proyect;
 
 @ContentView(R.layout.activity_user)
 public class UserActivity extends RoboFragmentActivity {
@@ -30,8 +29,9 @@ public class UserActivity extends RoboFragmentActivity {
 
 		super.onCreate(savedInstanceState);
 
-		listaDonaciones.add(new Donation("asdasd", "asdasd", new Proyect(
-				"asdasd")));
+		// amountLeft.setText(user.getAmountLeft().toString());
+
+		final ListView listView = (ListView) findViewById(android.R.id.list);
 		listView.setAdapter(new DonationAdapter(this, listaDonaciones));
 
 	}

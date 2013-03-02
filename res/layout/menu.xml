@@ -8,16 +8,21 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
         <TextView
-            android:layout_width="match_parent"
+            style="@style/titulo"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_weight="4"
             android:background="@color/orange"
             android:drawableLeft="@drawable/logobar"
-            android:gravity="center"
-            android:padding="10dip"
-            android:text="@string/name"
-            android:textColor="@android:color/white"
-            android:textSize="25sp"
-            android:textStyle="bold" />
+            android:text="@string/name" />
+        <TextView
+            android:id="@+id/amountLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            style="@style/titulo"
+            android:background="@color/darkOrange"
+            android:text="@string/_0_0_" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
