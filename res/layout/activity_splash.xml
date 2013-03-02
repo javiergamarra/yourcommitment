@@ -3,10 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".SplashActivity" >
 
     <ImageView
@@ -16,15 +12,16 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:adjustViewBounds="true"
-        android:src="@drawable/img_top_colores" />
+        android:src="@drawable/splash" />
 
     <ImageView
         android:id="@+id/ImagenViewLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ImagenViewTop"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:adjustViewBounds="true"
+<<<<<<< HEAD
         android:src="@drawable/logobar" />
 
     <TextView
@@ -109,13 +106,15 @@
         android:text="@string/subtitulo"
         android:textColor="@android:color/white"
         android:textSize="@dimen/subtitulo_splash" />
+=======
+        android:src="@drawable/launchicon" />
+>>>>>>> b60c835f08c35241c192aa0a6114bbe72c82f126
 
     <TextView
         android:id="@+id/TextViewPie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#99cc00"
         android:gravity="end"
         android:text="@string/creditos"
         android:textColor="@android:color/black"
