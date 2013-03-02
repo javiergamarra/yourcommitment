@@ -1,21 +1,53 @@
 package es.cylicon.yourcommitment.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.parse.ParseObject;
 
 public class Donation implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	private String id;
 	private String name;
 	private String description;
-	private Proyect proyect;
+	private String proyectId;
 	private Double amount;
+	private Proyect proyect;
+	
+	public Donation(final ParseObject parseDonation) {
+		setId(parseDonation.getString("objectId"));
+		setName(parseDonation.getString("name"));
+		setDescription(parseDonation.getString("description"));
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public Donation(final String name, final String description,
-			final Proyect proyect) {
+			final String proyectId) {
 		this.name = name;
 		this.description = description;
-		this.proyect = proyect;
+		this.proyectId = proyectId;
+	}
+
+	public Donation(final ParseObject object, final List<Proyect> proyects) {
+		name = object.getString("name");
+		description = object.getString("description");
+		amount = object.getDouble("amount");
+		proyectId = object.getString("proyectId");
+		for (final Proyect supposedProyect : proyects) {
+			if (supposedProyect.getId().equals(proyectId)) {
+				proyect = supposedProyect;
+			}
+		}
 	}
 
 	public String getName() {
@@ -24,14 +56,6 @@ public class Donation implements Serializable {
 
 	public void setName(final String name) {
 		this.name = name;
-	}
-
-	public Proyect getProyect() {
-		return proyect;
-	}
-
-	public void setProyect(final Proyect proyect) {
-		this.proyect = proyect;
 	}
 
 	public Double getAmount() {
@@ -50,4 +74,28 @@ public class Donation implements Serializable {
 		this.description = description;
 	}
 
+	public static List<Donation> createDonations(
+			final List<ParseObject> objects, final List<Proyect> proyects) {
+		final List<Donation> donations = new ArrayList<Donation>();
+		for (final ParseObject object : objects) {
+			donations.add(new Donation(object, proyects));
+		}
+		return donations;
+	}
+
+	public String getProyectId() {
+		return proyectId;
+	}
+
+	public void setProyectId(final String proyectId) {
+		this.proyectId = proyectId;
+	}
+
+	public Proyect getProyect() {
+		return proyect;
+	}
+
+	public void setProyect(final Proyect proyect) {
+		this.proyect = proyect;
+	}
 }
