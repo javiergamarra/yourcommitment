@@ -1,15 +1,35 @@
 package es.cylicon.yourcommitment.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Proyect implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	private String name;
-	private Double amount;
+	private String description;
+	private Double totalAmount;
 	private Double progress;
 	private String address;
+	private Category category;
+	private List<Update> updates;
+
+	public List<Update> getUpdates() {
+		return updates;
+	}
+
+	public void setUpdates(final List<Update> updates) {
+		this.updates = updates;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(final Category category) {
+		this.category = category;
+	}
 
 	public String getName() {
 		return name;
@@ -19,12 +39,12 @@ public class Proyect implements Serializable {
 		this.name = name;
 	}
 
-	public Double getAmount() {
-		return amount;
+	public Double getTotalAmount() {
+		return totalAmount;
 	}
 
-	public void setAmount(final Double amount) {
-		this.amount = amount;
+	public void setTotalAmount(final Double totalAmount) {
+		this.totalAmount = totalAmount;
 	}
 
 	public Double getProgress() {
@@ -41,6 +61,14 @@ public class Proyect implements Serializable {
 
 	public void setAddress(final String address) {
 		this.address = address;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(final String description) {
+		this.description = description;
 	}
 
 }

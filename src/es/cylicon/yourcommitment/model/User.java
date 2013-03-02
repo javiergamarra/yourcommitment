@@ -9,8 +9,17 @@ public class User implements Serializable {
 
 	private String login;
 	private String password;
-	private List<Proyect> proyects;
+	private List<Item> items;
 	private List<Organization> ongs;
+	private Double amount;
+
+	public Double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(final Double amount) {
+		this.amount = amount;
+	}
 
 	public String getLogin() {
 		return login;
@@ -28,12 +37,12 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	public List<Proyect> getProyects() {
-		return proyects;
+	public List<Item> getItems() {
+		return items;
 	}
 
-	public void setProyects(final List<Proyect> proyects) {
-		this.proyects = proyects;
+	public void setItems(final List<Item> items) {
+		this.items = items;
 	}
 
 	public List<Organization> getOngs() {
