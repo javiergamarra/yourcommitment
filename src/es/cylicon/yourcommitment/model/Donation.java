@@ -10,11 +10,26 @@ public class Donation implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	private String id;
 	private String name;
 	private String description;
 	private String proyectId;
 	private Double amount;
 	private Proyect proyect;
+	
+	public Donation(final ParseObject parseDonation) {
+		setId(parseDonation.getString("objectId"));
+		setName(parseDonation.getString("name"));
+		setDescription(parseDonation.getString("description"));
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public Donation(final String name, final String description,
 			final String proyectId) {
