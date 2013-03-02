@@ -38,7 +38,7 @@ public class DetailProyectActivity extends MenuActivity {
 
 	}
 
-	private void loadUpdates(final String proyectId) {
+	private void loadUpdates(final String proyectId) { 
 		final ParseQuery query = new ParseQuery("Update");
 		query.whereEqualTo("proyectId", proyectId).findInBackground(
 				new FindCallback() {
