@@ -12,6 +12,7 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
+import es.cylicon.yourcommitment.MapActivity;
 import es.cylicon.yourcommitment.R;
 import es.cylicon.yourcommitment.model.User;
 
@@ -63,7 +64,7 @@ public class LoginActivity extends MenuActivity {
 
 						application.setCurrentUser(currentUser);
 						startActivity(new Intent(LoginActivity.this,
-								ProyectsActivity.class));
+								MapActivity.class));
 					}
 				});
 	}

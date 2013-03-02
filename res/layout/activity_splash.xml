@@ -25,7 +25,7 @@
         android:layout_below="@+id/ImagenViewTop"
         android:layout_centerHorizontal="true"
         android:adjustViewBounds="true"
-        android:src="@drawable/logo_android" />
+        android:src="@drawable/logobar" />
 
     <TextView
         android:id="@+id/TextViewTitulo"

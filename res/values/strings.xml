@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">Your Commitment</string>
+    <string name="name">yourcommitment</string>
     <string name="app_id">223989664321682</string>
     <string name="opcion1">opcion1</string>
     <string name="hi">hi</string>
@@ -21,12 +22,13 @@
     <string name="title_activity_menu">MenuActivity</string>
     <string name="texto_hint">Donations</string>
     <string name="description_image">Descripcion imagen</string>
-    <string name="mundo">mundo</string>
-    <string name="perfil">perfil</string>
-    <string name="donaciones">donaciones</string>
-    <string name="proyectos">proyectos</string>
+    <string name="mundo">Mundo</string>
+    <string name="perfil">Perfil</string>
+    <string name="donaciones">Donaciones</string>
+    <string name="proyectos">Proyectos</string>
     <string name="title_activity_mapa">MapaActivity</string>
     <string name="title_activity_login_failed">LoginFailedActivity</string>
     <string name="try_to_login">Login again with facebook!</string>
     <string name="login_failed_please_try_again">Login Failed! Please try again...</string>
+    <string name="map">AQUI VA UN MAPA</string>
 </resources>
