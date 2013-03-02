@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import es.cylicon.yourcommitment.R;
 import es.cylicon.yourcommitment.adapter.DonationAdapter;
@@ -36,6 +38,9 @@ public class UserActivity extends RoboFragmentActivity implements
 	@InjectView(android.R.id.list)
 	private ListView listView;
 
+	// @InjectView(R.id.selector)
+	protected SeekBar selector;
+
 	private User user;
 	private DonationAdapter adapter;
 
@@ -51,6 +56,23 @@ public class UserActivity extends RoboFragmentActivity implements
 		final Double cantidad = user.getAmount();
 		amount.setText((cantidad == null ? 0 : cantidad.toString()) + MONEDA);
 		amountLeft.setText(user.getAmountLeft().toString() + MONEDA);
+
+		selector.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+
+			@Override
+			public void onStopTrackingTouch(final SeekBar seekBar) {
+			}
+
+			@Override
+			public void onStartTrackingTouch(final SeekBar seekBar) {
+			}
+
+			@Override
+			public void onProgressChanged(final SeekBar seekBar,
+					final int progress, final boolean fromUser) {
+				amount.setText(progress + MONEDA);
+			}
+		});
 
 		adapter = new DonationAdapter(this, user.getDonations());
 		listView.setAdapter(adapter);
