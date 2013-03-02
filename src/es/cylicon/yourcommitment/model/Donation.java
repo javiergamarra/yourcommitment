@@ -2,20 +2,30 @@ package es.cylicon.yourcommitment.model;
 
 import java.io.Serializable;
 
+import com.parse.ParseObject;
+
 public class Donation implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	private String id;
 	private String name;
 	private String description;
 	private Proyect proyect;
 	private Double amount;
+	
+	public Donation(final ParseObject parseDonation) {
+		setId(parseDonation.getString("objectId"));
+		setName(parseDonation.getString("name"));
+		setDescription(parseDonation.getString("description"));
+	}
 
-	public Donation(final String name, final String description,
-			final Proyect proyect) {
-		this.name = name;
-		this.description = description;
-		this.proyect = proyect;
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getName() {
