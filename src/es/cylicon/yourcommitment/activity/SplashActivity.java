@@ -32,14 +32,7 @@ public class SplashActivity extends Activity {
 				R.anim.zoom_anim);
 		logotipoAndroid.startAnimation(zoomAnimation);
 
-
-		// Animacion tiempo final
-		TextView pie = (TextView) findViewById(R.id.TextViewPie);
-		Animation fadeFinal = AnimationUtils.loadAnimation(this,
-				R.anim.fade_final);
-		pie.startAnimation(fadeFinal);
-
-		fadeFinal.setAnimationListener(new AnimationListener() {
+		zoomAnimation.setAnimationListener(new AnimationListener() {
 
 			@Override
 			public void onAnimationStart(final Animation animation) {
