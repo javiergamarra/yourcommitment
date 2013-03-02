@@ -5,6 +5,7 @@
     android:layout_gravity="center"
     android:background="@drawable/splashscreen"
     android:orientation="vertical"
+    android:id="@+id/login"
     tools:context=".LoginActivity" >
     <ImageView
         android:id="@+id/ImagenViewTop"

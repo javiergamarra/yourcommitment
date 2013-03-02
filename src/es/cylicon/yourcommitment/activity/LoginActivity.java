@@ -1,8 +1,12 @@
 package es.cylicon.yourcommitment.activity;
 
+import roboguice.inject.InjectView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.parse.GetCallback;
@@ -13,16 +17,19 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
-import es.cylicon.yourcommitment.MapActivity;
 import es.cylicon.yourcommitment.R;
 import es.cylicon.yourcommitment.model.User;
 
-public class LoginActivity extends MenuActivity {
+public class LoginActivity extends MenuActivity implements OnClickListener {
+
+	@InjectView(R.id.login)
+	private RelativeLayout layout;
 
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		layout.setOnClickListener(this);
 
 		ParseFacebookUtils.logIn(this, new LogInCallback() {
 			@Override
@@ -69,7 +76,7 @@ public class LoginActivity extends MenuActivity {
 
 						application.setCurrentUser(currentUser);
 						startActivity(new Intent(LoginActivity.this,
-								MapActivity.class));
+								ProyectsActivity.class));
 					}
 				});
 	}
@@ -79,6 +86,11 @@ public class LoginActivity extends MenuActivity {
 			final int resultCode, final Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		ParseFacebookUtils.finishAuthentication(requestCode, resultCode, data);
+	}
+
+	@Override
+	public void onClick(final View v) {
+		startActivity(new Intent(this, ProyectsActivity.class));
 	}
 
 }
