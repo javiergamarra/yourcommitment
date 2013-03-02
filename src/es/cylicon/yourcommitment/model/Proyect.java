@@ -3,6 +3,8 @@ package es.cylicon.yourcommitment.model;
 import java.io.Serializable;
 import java.util.List;
 
+import com.parse.ParseObject;
+
 public class Proyect implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -14,6 +16,15 @@ public class Proyect implements Serializable {
 	private String address;
 	private Category category;
 	private List<Update> updates;
+
+	public Proyect(final String name) {
+		this.name = name;
+	}
+
+	public Proyect(final ParseObject parseProyect) {
+		setName(parseProyect.getString("name"));
+		setDescription(parseProyect.getString("description"));
+	}
 
 	public List<Update> getUpdates() {
 		return updates;

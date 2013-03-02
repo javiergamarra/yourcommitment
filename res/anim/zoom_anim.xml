@@ -4,12 +4,12 @@
     android:shareInterpolator="false">
     
     <scale
-        android:startOffset="3000"
+        android:startOffset="1000"
         android:pivotX="50%"
         android:pivotY="50%"
         android:fromXScale=".01"
         android:fromYScale=".01"
         android:toXScale="1.0"
         android:toYScale="1.0"
-        android:duration="1000" />
+        android:duration="3000" />
 </set>

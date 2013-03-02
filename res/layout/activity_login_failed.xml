@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:text="@string/login_failed_please_try_again" />
     <Button
+        android:id="@+id/tryToLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/try_to_login" />

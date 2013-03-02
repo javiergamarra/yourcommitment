@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
     
     <style name="AppBaseTheme" parent="android:Theme.Light">
@@ -43,4 +44,30 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+=======
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light.NoTitleBar">        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme"> <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <style name="itemMenu" parent="android:Widget.Holo.Light.TextView">
+        <item name="android:contentDescription">@string/imagen</item>
+    </style>
+    <style name="itemMenu" parent="android:Widget.Holo.Light.TextView">
+        <item name="android:contentDescription">@string/imagen</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:drawablePadding">15dip</item>
+        <item name="android:padding">10dip</item>
+        <item name="android:background">@color/darkCream</item>
+    </style>
+>>>>>>> 4d1f8ee2d08fb358103025746cad0dcd1e8864d5
 </resources>
