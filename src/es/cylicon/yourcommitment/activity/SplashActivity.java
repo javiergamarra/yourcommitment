@@ -38,9 +38,10 @@ public class SplashActivity extends Activity {
 			}
 
 			public void onAnimationEnd(final Animation animation) {
-				startActivity(new Intent(SplashActivity.this,
-						LoginActivity.class));
-				finish();
+				final Intent intent = new Intent(SplashActivity.this,
+						LoginActivity.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+				startActivity(intent);
 			}
 		});
 

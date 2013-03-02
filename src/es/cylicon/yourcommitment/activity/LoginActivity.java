@@ -29,8 +29,10 @@ public class LoginActivity extends MenuActivity {
 			public void done(final ParseUser user, final ParseException err) {
 				if (user == null) {
 					Log.e(TAG, "Uh oh. The user cancelled the Facebook login.");
-					startActivity(new Intent(LoginActivity.this,
-							LoginFailedActivity.class));
+					final Intent intent = new Intent(LoginActivity.this,
+							LoginFailedActivity.class);
+					intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+					startActivity(intent);
 				} else {
 					login(user);
 				}

@@ -249,8 +249,8 @@ containing a value of this type.
         public static final int splashscreen=0x7f020034;
     }
     public static final class id {
-        public static final int ImagenViewLogo=0x7f05000b;
-        public static final int ImagenViewTop=0x7f05000a;
+        public static final int ImagenViewLogo=0x7f050005;
+        public static final int ImagenViewTop=0x7f050004;
         public static final int action_settings=0x7f05002c;
         public static final int arrowNext=0x7f050026;
         public static final int com_facebook_login_activity_progress_bar=0x7f050010;
@@ -272,25 +272,25 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_login_button=0x7f050022;
         public static final int com_facebook_usersettingsfragment_logo_image=0x7f050020;
         public static final int com_facebook_usersettingsfragment_profile_name=0x7f050021;
-        public static final int descripcion=0x7f050009;
+        public static final int descripcion=0x7f05000b;
         public static final int imageCategory=0x7f050023;
         public static final int large=0x7f050002;
         public static final int map=0x7f05002a;
-        public static final int mapActivity=0x7f050005;
-        public static final int menu=0x7f050004;
+        public static final int mapActivity=0x7f050007;
+        public static final int menu=0x7f050006;
         public static final int menu_settings=0x7f05002b;
         public static final int name_donation=0x7f050024;
         public static final int name_proyect=0x7f050025;
         public static final int normal=0x7f050001;
         public static final int picker_subtitle=0x7f05001f;
         public static final int profile=0x7f050028;
-        public static final int profileActivity=0x7f050006;
+        public static final int profileActivity=0x7f050008;
         public static final int proyects=0x7f050029;
-        public static final int proyectsActivity=0x7f050007;
+        public static final int proyectsActivity=0x7f050009;
         public static final int search_box=0x7f05001e;
         public static final int separador=0x7f050027;
         public static final int small=0x7f050000;
-        public static final int titulo=0x7f050008;
+        public static final int titulo=0x7f05000a;
         public static final int tryToLogin=0x7f050003;
         public static final int userAmount=0x7f05000c;
         public static final int userAmountDonation=0x7f05000d;

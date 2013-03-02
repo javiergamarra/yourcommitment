@@ -3,7 +3,6 @@ package es.cylicon.yourcommitment.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import roboguice.activity.RoboFragmentActivity;
 import roboguice.inject.InjectView;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -14,7 +13,7 @@ import es.cylicon.yourcommitment.model.Donation;
 import es.cylicon.yourcommitment.model.Proyect;
 import es.cylicon.yourcommitment.model.User;
 
-public class UserActivity extends RoboFragmentActivity {
+public class UserActivity extends MenuActivity {
 
 	@InjectView(R.id.userAmount)
 	private TextView amount;
