@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Your Commitment</string>
     <string name="name">yourcommitment</string>
     <string name="app_id">223989664321682</string>
@@ -40,4 +39,8 @@
     <string name="tituloTablaProyectos">Lista de Proyectos</string>
     <string name="tituloUser">Datos usuario</string>
     <string name="nombre_del_proyecto">Nombre del proyecto</string>
+    <string name="mozambique">Mozambique</string>
+    <string name="descripci_n_del_proyecto">Descripción del proyecto</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent molestie, nibh gravida iaculis dapibus, risus risus facilisis libero, ac euismod dolor massa et nisl. Nunc molestie sem vel tellus consequat tempus. Cras interdum rutrum erat, vitae semper tortor accumsan tempor. In molestie volutpat lacus tempus luctus. </string>
+    <string name="donar">Donar</string>
 </resources>

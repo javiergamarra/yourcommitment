@@ -1,6 +1,5 @@
 package es.cylicon.yourcommitment.activity;
 
-import roboguice.activity.RoboFragmentActivity;
 import roboguice.inject.ContentView;
 import roboguice.inject.InjectView;
 import android.content.Intent;
@@ -15,8 +14,7 @@ import es.cylicon.yourcommitment.adapter.DonationAdapter;
 import es.cylicon.yourcommitment.model.User;
 
 @ContentView(R.layout.activity_user)
-public class UserActivity extends RoboFragmentActivity implements
-		OnItemClickListener {
+public class UserActivity extends MenuActivity implements OnItemClickListener {
 
 	private static final String MONEDA = " EUROS";
 	private static final int DETALLE_PROYECTO = 0;
