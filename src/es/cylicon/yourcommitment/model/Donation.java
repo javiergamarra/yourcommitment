@@ -11,6 +11,13 @@ public class Donation implements Serializable {
 	private Proyect proyect;
 	private Double amount;
 
+	public Donation(final String name, final String description,
+			final Proyect proyect) {
+		this.name = name;
+		this.description = description;
+		this.proyect = proyect;
+	}
+
 	public String getName() {
 		return name;
 	}

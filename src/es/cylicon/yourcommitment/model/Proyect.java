@@ -15,6 +15,10 @@ public class Proyect implements Serializable {
 	private Category category;
 	private List<Update> updates;
 
+	public Proyect(final String name) {
+		this.name = name;
+	}
+
 	public List<Update> getUpdates() {
 		return updates;
 	}

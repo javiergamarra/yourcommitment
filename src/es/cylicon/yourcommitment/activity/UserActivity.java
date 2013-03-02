@@ -3,17 +3,18 @@ package es.cylicon.yourcommitment.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import roboguice.activity.RoboListActivity;
+import roboguice.activity.RoboFragmentActivity;
 import roboguice.inject.InjectView;
 import android.os.Bundle;
-import android.view.Menu;
+import android.widget.ListView;
 import android.widget.TextView;
 import es.cylicon.yourcommitment.R;
 import es.cylicon.yourcommitment.adapter.DonationAdapter;
 import es.cylicon.yourcommitment.model.Donation;
+import es.cylicon.yourcommitment.model.Proyect;
 import es.cylicon.yourcommitment.model.User;
 
-public class UserActivity extends RoboListActivity {
+public class UserActivity extends RoboFragmentActivity {
 
 	@InjectView(R.id.userAmount)
 	private TextView amount;
@@ -29,21 +30,16 @@ public class UserActivity extends RoboListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_user);
 
-		User user = new User();
+		final User user = new User();
 		user.setAmount((double) 25);
 
 		amount.setText(user.getAmount().toString());
 		// amountLeft.setText(user.getAmountLeft().toString());
 
-		setListAdapter(new DonationAdapter(this, listaDonaciones));
+		final ListView listView = (ListView) findViewById(android.R.id.list);
+		listaDonaciones.add(new Donation("asdasd", "asdasd", new Proyect(
+				"asdasd")));
+		listView.setAdapter(new DonationAdapter(this, listaDonaciones));
 
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(final Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.activity_user, menu);
-		return true;
-	}
-
 }

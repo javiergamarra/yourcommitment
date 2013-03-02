@@ -4,7 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".UserActivity" >
-
+    <fragment
+        android:id="@+id/menu"
+        android:name="es.cylicon.yourcommitment.activity.MenuFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <TextView
         android:id="@+id/userAmount"
         android:layout_width="wrap_content"
@@ -15,10 +19,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/donationAmountUser" />
-    
-     <ListView
+    <ListView
         android:id="@android:id/list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
 </LinearLayout>

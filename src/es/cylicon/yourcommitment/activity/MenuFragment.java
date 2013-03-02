@@ -39,7 +39,7 @@ public class MenuFragment extends RoboFragment implements OnClickListener {
 	}
 
 	private void clickMenu() {
-		if (getView().findViewById(R.id.profileActivity) != null) {
+		if (getView().findViewById(R.id.userAmount) != null) {
 			profile.setBackgroundColor(getActivity().getResources().getColor(
 					R.color.lightCream));
 		} else if (getView().findViewById(R.id.proyectsActivity) != null) {
