@@ -44,7 +44,7 @@ public class MenuFragment extends RoboFragment implements OnClickListener {
 		if (application.getCurrentUser() != null) {
 			amountLeft.setText(application.getCurrentUser().getAmount()
 					.toString()
-					+ "€");
+					+ "â‚¬");
 		}
 	}
 
@@ -55,7 +55,7 @@ public class MenuFragment extends RoboFragment implements OnClickListener {
 		} else if (getActivity().findViewById(R.id.proyectsActivity) != null) {
 			proyects.setBackgroundColor(getActivity().getResources().getColor(
 					R.color.lightCream));
-		} else if (getActivity().findViewById(R.id.mapActivity) != null) {
+		} else if (getActivity().findViewById(R.id.mapa) != null) {
 			map.setBackgroundColor(getActivity().getResources().getColor(
 					R.color.lightCream));
 		}
