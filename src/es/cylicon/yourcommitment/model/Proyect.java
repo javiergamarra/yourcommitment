@@ -33,6 +33,10 @@ public class Proyect implements Serializable {
 		setAddress(parseProyect.getString("address"));
 	}
 
+	public Proyect() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getId() {
 		return id;
 	}
