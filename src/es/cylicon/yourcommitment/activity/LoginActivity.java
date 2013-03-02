@@ -3,6 +3,7 @@ package es.cylicon.yourcommitment.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.parse.GetCallback;
 import com.parse.LogInCallback;
@@ -59,7 +60,9 @@ public class LoginActivity extends MenuActivity {
 						} else {
 							currentUser = new User(userFound);
 						}
-
+						Toast.makeText(LoginActivity.this,
+								"Bienvenido! " + currentUser.getUsername(),
+								Toast.LENGTH_SHORT).show();
 						final YourCommitmentApplication application = (YourCommitmentApplication) getApplication();
 
 						application.setCurrentUser(currentUser);

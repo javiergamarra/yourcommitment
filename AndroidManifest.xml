@@ -51,6 +51,10 @@
         <activity
             android:name="es.cylicon.yourcommitment.activity.SplashActivity"
             android:label="@string/title_activity_splash" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="es.cylicon.yourcommitment.activity.MenuActivity"
@@ -59,10 +63,6 @@
         <activity
             android:name="es.cylicon.yourcommitment.MapActivity"
             android:label="@string/title_activity_mapa" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="es.cylicon.yourcommitment.activity.LoginFailedActivity"
