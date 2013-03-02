@@ -38,7 +38,7 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/app_id" />
         <activity
-            android:name="es.cylicon.yourcommitment.UserActivity"
+            android:name="es.cylicon.yourcommitment.activity.UserActivity"
             android:label="@string/title_activity_user" >
         </activity>
         <activity
@@ -52,6 +52,10 @@
         <activity
             android:name="es.cylicon.yourcommitment.SplashActivity"
             android:label="@string/title_activity_splash" >
+        </activity>
+        <activity
+            android:name="es.cylicon.yourcommitment.MapActivity"
+            android:label="@string/title_activity_mapa" >
         </activity>
     </application>
 </manifest>

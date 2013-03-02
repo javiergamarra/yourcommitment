@@ -14,4 +14,9 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_detail_proyect">DetailProyectActivity</string>
     <string name="title_activity_splash">SplashActivity</string>
+    <string name="mundo">mundo</string>
+    <string name="perfil">perfil</string>
+    <string name="donaciones">donaciones</string>
+    <string name="proyectos">proyectos</string>
+    <string name="title_activity_mapa">MapaActivity</string>
 </resources>

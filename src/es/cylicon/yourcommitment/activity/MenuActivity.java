@@ -1,7 +1,7 @@
 package es.cylicon.yourcommitment.activity;
 
-import android.support.v4.app.FragmentActivity;
+import roboguice.activity.RoboFragmentActivity;
 
-public class MenuActivity extends FragmentActivity {
+public class MenuActivity extends RoboFragmentActivity {
 
 }
