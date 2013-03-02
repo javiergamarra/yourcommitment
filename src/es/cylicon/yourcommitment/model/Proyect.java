@@ -1,6 +1,7 @@
 package es.cylicon.yourcommitment.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.parse.ParseObject;
@@ -26,13 +27,16 @@ public class Proyect implements Serializable {
 		setId(parseProyect.getString("objectId"));
 		setName(parseProyect.getString("name"));
 		setDescription(parseProyect.getString("description"));
+		setTotalAmount(parseProyect.getDouble("totalAmount"));
+		setProgress(parseProyect.getDouble("progress"));
+		setAddress(parseProyect.getString("address"));
 	}
-	
+
 	public String getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(final String id) {
 		this.id = id;
 	}
 
@@ -90,6 +94,14 @@ public class Proyect implements Serializable {
 
 	public void setDescription(final String description) {
 		this.description = description;
+	}
+
+	public static List<Proyect> createProyects(final List<ParseObject> objects) {
+		final List<Proyect> proyects = new ArrayList<Proyect>();
+		for (final ParseObject object : objects) {
+			proyects.add(new Proyect(object));
+		}
+		return proyects;
 	}
 
 }

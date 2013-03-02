@@ -23,7 +23,6 @@ import es.cylicon.yourcommitment.model.Proyect;
 public class ProyectsActivity extends MenuActivity implements
 		OnItemClickListener {
 
-	private static final String TAG = "ProyectsActivity";
 	private static final int DETALLE_PROYECTO = 0;
 
 	private final List<Proyect> proyects = new ArrayList<Proyect>();
@@ -65,6 +64,7 @@ public class ProyectsActivity extends MenuActivity implements
 			final int posicion, final long arg3) {
 		final Intent intent = new Intent(this, DetailProyectActivity.class);
 		intent.putExtra("proyectId", proyects.get(posicion).getId());
+		intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
 		startActivityForResult(intent, DETALLE_PROYECTO);
 	}
 

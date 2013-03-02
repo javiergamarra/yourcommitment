@@ -10,7 +10,6 @@ import android.widget.TextView;
 import es.cylicon.yourcommitment.R;
 import es.cylicon.yourcommitment.adapter.DonationAdapter;
 import es.cylicon.yourcommitment.model.Donation;
-import es.cylicon.yourcommitment.model.Proyect;
 import es.cylicon.yourcommitment.model.User;
 
 public class UserActivity extends MenuActivity {
@@ -36,8 +35,6 @@ public class UserActivity extends MenuActivity {
 		// amountLeft.setText(user.getAmountLeft().toString());
 
 		final ListView listView = (ListView) findViewById(android.R.id.list);
-		listaDonaciones.add(new Donation("asdasd", "asdasd", new Proyect(
-				"asdasd")));
 		listView.setAdapter(new DonationAdapter(this, listaDonaciones));
 
 	}

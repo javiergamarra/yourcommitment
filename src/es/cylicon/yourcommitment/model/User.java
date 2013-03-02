@@ -9,11 +9,12 @@ public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	private String id;
 	private String username;
 	private String email;
-	private Double amount;
+	private Double amount = 0.0D;
 	private List<Donation> donations;
-	private List<Organization> ongs;
+	private List<Proyect> proyects;
 
 	public User(final String username) {
 		this.username = username;
@@ -23,6 +24,7 @@ public class User implements Serializable {
 		username = parseObject.getString("username");
 		email = parseObject.getString("email");
 		amount = parseObject.getDouble("amount");
+		id = parseObject.getObjectId();
 	}
 
 	public User() {
@@ -34,14 +36,6 @@ public class User implements Serializable {
 
 	public void setAmount(final Double amount) {
 		this.amount = amount;
-	}
-
-	public List<Organization> getOngs() {
-		return ongs;
-	}
-
-	public void setOngs(final List<Organization> ongs) {
-		this.ongs = ongs;
 	}
 
 	public List<Donation> getDonations() {
@@ -81,6 +75,22 @@ public class User implements Serializable {
 		user.put("username", username);
 		user.put("amount", 0.0D);
 		return user;
+	}
+
+	public List<Proyect> getProyects() {
+		return proyects;
+	}
+
+	public void setProyects(final List<Proyect> proyects) {
+		this.proyects = proyects;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(final String id) {
+		this.id = id;
 	}
 
 }

@@ -164,9 +164,10 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_connected_shadow_color=0x7f070002;
         public static final int com_facebook_usersettingsfragment_connected_text_color=0x7f070001;
         public static final int com_facebook_usersettingsfragment_not_connected_text_color=0x7f070003;
-        public static final int darkBrown=0x7f070009;
+        public static final int darkBrown=0x7f07000a;
         public static final int darkCream=0x7f070006;
-        public static final int lightBrown=0x7f070008;
+        public static final int darkOrange=0x7f070008;
+        public static final int lightBrown=0x7f070009;
         public static final int lightCream=0x7f070005;
         public static final int orange=0x7f070007;
     }
@@ -249,9 +250,10 @@ containing a value of this type.
         public static final int splashscreen=0x7f020034;
     }
     public static final class id {
-        public static final int ImagenViewLogo=0x7f050007;
-        public static final int ImagenViewTop=0x7f050006;
-        public static final int action_settings=0x7f05002d;
+        public static final int ImagenViewLogo=0x7f050006;
+        public static final int ImagenViewTop=0x7f050005;
+        public static final int action_settings=0x7f05002e;
+        public static final int amountLeft=0x7f050029;
         public static final int arrowNext=0x7f050027;
         public static final int com_facebook_login_activity_progress_bar=0x7f050011;
         public static final int com_facebook_picker_activity_circle=0x7f050010;
@@ -275,24 +277,24 @@ containing a value of this type.
         public static final int descripcion=0x7f05000c;
         public static final int imageCategory=0x7f050024;
         public static final int large=0x7f050002;
-        public static final int login=0x7f050005;
-        public static final int map=0x7f05002b;
+        public static final int login=0x7f050004;
+        public static final int map=0x7f05002c;
         public static final int mapActivity=0x7f050008;
-        public static final int menu=0x7f050003;
-        public static final int menu_settings=0x7f05002c;
+        public static final int menu=0x7f050007;
+        public static final int menu_settings=0x7f05002d;
         public static final int name_donation=0x7f050025;
         public static final int name_proyect=0x7f050026;
         public static final int normal=0x7f050001;
         public static final int picker_subtitle=0x7f050020;
-        public static final int profile=0x7f050029;
+        public static final int profile=0x7f05002a;
         public static final int profileActivity=0x7f050009;
-        public static final int proyects=0x7f05002a;
+        public static final int proyects=0x7f05002b;
         public static final int proyectsActivity=0x7f05000a;
         public static final int search_box=0x7f05001f;
         public static final int separador=0x7f050028;
         public static final int small=0x7f050000;
         public static final int titulo=0x7f05000b;
-        public static final int tryToLogin=0x7f050004;
+        public static final int tryToLogin=0x7f050003;
         public static final int userAmount=0x7f05000d;
         public static final int userAmountDonation=0x7f05000e;
     }
@@ -336,6 +338,7 @@ containing a value of this type.
         public static final int splash=0x7f0a0008;
     }
     public static final class string {
+        public static final int _0_0_=0x7f060037;
         public static final int action_settings=0x7f060026;
         public static final int amountUser=0x7f060023;
         public static final int app_id=0x7f06001b;
@@ -424,6 +427,7 @@ containing a value of this type.
         public static final int itemMenu=0x7f090009;
         public static final int itemName=0x7f090007;
         public static final int itemText=0x7f090006;
+        public static final int titulo=0x7f09000a;
     }
     public static final class styleable {
         /** Attributes that can be used with a com_facebook_friend_picker_fragment.
