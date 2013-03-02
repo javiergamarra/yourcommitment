@@ -42,5 +42,6 @@
     <string name="mozambique">Mozambique</string>
     <string name="descripci_n_del_proyecto">Descripción del proyecto</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent molestie, nibh gravida iaculis dapibus, risus risus facilisis libero, ac euismod dolor massa et nisl. Nunc molestie sem vel tellus consequat tempus. Cras interdum rutrum erat, vitae semper tortor accumsan tempor. In molestie volutpat lacus tempus luctus. </string>
-    <string name="donar">Donar</string>
+    <string name="donar">Donar</string>  
+    <string name="confirm_donar">Donar !</string>
 </resources>

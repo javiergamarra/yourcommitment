@@ -17,6 +17,15 @@ public class Donation implements Serializable {
 	private Double amount;
 	private Proyect proyect;
 	
+	public ParseObject getDonationObject() {
+		final ParseObject donation = new ParseObject("Donation");
+		donation.put("name", name);
+		donation.put("description", description);
+		donation.put("amount", amount);
+		donation.put("proyect", proyect);
+		return donation;
+	}
+	
 	public Donation(final ParseObject parseDonation) {
 		setId(parseDonation.getString("objectId"));
 		setName(parseDonation.getString("name"));
