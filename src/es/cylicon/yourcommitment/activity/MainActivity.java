@@ -5,12 +5,9 @@ import java.util.List;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.parse.LogInCallback;
 import com.parse.ParseException;
-import com.parse.ParseFacebookUtils;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
-import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 import es.cylicon.yourcommitment.R;
@@ -23,22 +20,22 @@ public class MainActivity extends MenuActivity {
 	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		// saveSomething();
-		// searchSomething();
-		ParseFacebookUtils.logIn(this, new LogInCallback() {
-			@Override
-			public void done(final ParseUser user, final ParseException err) {
-				if (user == null) {
-					Log.e(TAG, "Uh oh. The user cancelled the Facebook login.");
-				} else if (user.isNew()) {
-					Log.e(TAG, "User signed up and logged in through Facebook!");
-				} else {
-					Log.e(TAG,
-							"User logged in through Facebook!"
-									+ user.getUsername() + user.getEmail());
-				}
-			}
-		});
+		saveSomething();
+		// // searchSomething();
+		// ParseFacebookUtils.logIn(this, new LogInCallback() {
+		// @Override
+		// public void done(final ParseUser user, final ParseException err) {
+		// if (user == null) {
+		// Log.e(TAG, "Uh oh. The user cancelled the Facebook login.");
+		// } else if (user.isNew()) {
+		// Log.e(TAG, "User signed up and logged in through Facebook!");
+		// } else {
+		// Log.e(TAG,
+		// "User logged in through Facebook!"
+		// + user.getUsername() + user.getEmail());
+		// }
+		// }
+		// });
 
 	}
 
