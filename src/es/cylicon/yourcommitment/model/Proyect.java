@@ -16,6 +16,7 @@ public class Proyect implements Serializable {
 	private Double totalAmount;
 	private Double progress;
 	private String address;
+	private Double budget;
 	private Category category;
 	private List<Update> updates;
 
@@ -24,7 +25,7 @@ public class Proyect implements Serializable {
 	}
 
 	public Proyect(final ParseObject parseProyect) {
-		setId(parseProyect.getString("objectId"));
+		setId(parseProyect.getObjectId());
 		setName(parseProyect.getString("name"));
 		setDescription(parseProyect.getString("description"));
 		setTotalAmount(parseProyect.getDouble("totalAmount"));
@@ -102,6 +103,14 @@ public class Proyect implements Serializable {
 			proyects.add(new Proyect(object));
 		}
 		return proyects;
+	}
+
+	public Double getBudget() {
+		return budget;
+	}
+
+	public void setBudget(final Double budget) {
+		this.budget = budget;
 	}
 
 }

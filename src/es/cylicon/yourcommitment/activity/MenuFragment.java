@@ -41,8 +41,11 @@ public class MenuFragment extends RoboFragment implements OnClickListener {
 		clickMenu();
 		final YourCommitmentApplication application = (YourCommitmentApplication) getActivity()
 				.getApplication();
-		amountLeft.setText(application.getCurrentUser().getAmount().toString()
-				+ "€");
+		if (application.getCurrentUser() != null) {
+			amountLeft.setText(application.getCurrentUser().getAmount()
+					.toString()
+					+ "€");
+		}
 	}
 
 	private void clickMenu() {

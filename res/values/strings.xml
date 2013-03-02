@@ -11,7 +11,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_user">UserActivity</string>
-    <string name="amountUser">Presupuesto inicial</string>
+    <string name="amountUser">Presupuesto inicial:</string>
     <string name="donationAmountUser">Donaciones</string>
     <string name="title_activity_proyects">ProyectsActivity</string>
     <string name="action_settings">Settings</string>
@@ -38,4 +38,6 @@
     <string name="userNameLabel">Nombre:</string>
     <string name="userEmailLabel">E-mail:</string>
     <string name="tituloTablaProyectos">Lista de Proyectos</string>
+    <string name="tituloUser">Datos usuario</string>
+    <string name="nombre_del_proyecto">Nombre del proyecto</string>
 </resources>
