@@ -15,6 +15,11 @@ public class Proyect implements Serializable {
 	private Category category;
 	private List<Update> updates;
 
+	public Proyect(ParseObject parseProyect) {
+		this.setName(parseProyect.getString("name"));
+		this.setDescription(parseProyect.getString("description"));
+	}
+	
 	public List<Update> getUpdates() {
 		return updates;
 	}
