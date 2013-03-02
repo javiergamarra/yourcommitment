@@ -11,7 +11,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:adjustViewBounds="true"
-        android:src="@drawable/splash" />
+        android:src="@drawable/splashscreen" />
     <ImageView
         android:id="@+id/ImagenViewLogo"
         android:layout_width="wrap_content"

@@ -21,10 +21,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/donationAmountUser" />
-<<<<<<< HEAD
-
-=======
->>>>>>> 4d1f8ee2d08fb358103025746cad0dcd1e8864d5
     <ListView
         android:id="@android:id/list"
         android:layout_width="wrap_content"
