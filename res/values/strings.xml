@@ -4,6 +4,9 @@
     <string name="app_id">223989664321682</string>
     <string name="opcion1">opcion1</string>
     <string name="hi">hi</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
     <string name="imagen">imagen</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>

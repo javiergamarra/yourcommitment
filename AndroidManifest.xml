@@ -4,7 +4,7 @@
     android:versionCode="1"
     android:versionName="1.0" >
     <uses-sdk
-        android:minSdkVersion="17"
+        android:minSdkVersion="8"
         android:targetSdkVersion="17" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -37,8 +37,9 @@
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/app_id" />
+
         <activity
-            android:name="es.cylicon.yourcommitment.activity.UserActivity"
+            android:name="es.cylicon.yourcommitment.UserActivity"
             android:label="@string/title_activity_user" >
         </activity>
         <activity
