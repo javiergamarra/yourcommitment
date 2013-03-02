@@ -25,6 +25,9 @@ public class User implements Serializable {
 		amount = parseObject.getDouble("amount");
 	}
 
+	public User() {
+	}
+
 	public Double getAmount() {
 		return amount;
 	}
