@@ -3,28 +3,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal" >
-    <ImageButton
+    <TextView
+        android:id="@+id/proyects"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:contentDescription="@string/imagen"
-        android:src="@android:drawable/btn_radio" />
-    <ImageButton
+        android:drawableTop="@drawable/acceptprojectsicon"
+        android:gravity="center_horizontal"
+        android:text="@string/donaciones" />
+    <TextView
+        android:id="@+id/profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:contentDescription="@string/imagen"
-        android:src="@android:drawable/btn_radio" />
-    <ImageButton
+        android:drawableTop="@drawable/profileicon"
+        android:gravity="center_horizontal"
+        android:text="@string/perfil" />
+    <TextView
+        android:id="@+id/map"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:contentDescription="@string/imagen"
-        android:src="@android:drawable/btn_radio" />
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:contentDescription="@string/imagen"
-        android:src="@android:drawable/btn_radio" />
+        android:drawableTop="@android:drawable/btn_star"
+        android:gravity="center_horizontal"
+        android:text="@string/mundo" />
 </LinearLayout>

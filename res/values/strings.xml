@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">Your Commitment</string>
     <string name="app_id">223989664321682</string>
     <string name="opcion1">opcion1</string>
     <string name="hi">hi</string>
+    <string name="title_activity_profile">ProfileActivity</string>
     <string name="imagen">imagen</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
@@ -13,7 +15,18 @@
     <string name="title_activity_proyects">ProyectsActivity</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_detail_proyect">DetailProyectActivity</string>
-    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_splash">YourCommitment</string>
+    <string name="subtitulo">¿Te gusta comprometerte?</string>
+    <string name="creditos">CyliconValley</string>
+    <string name="title_activity_menu">MenuActivity</string>
     <string name="texto_hint">Donations</string>
     <string name="description_image">Descripcion imagen</string>
+    <string name="mundo">mundo</string>
+    <string name="perfil">perfil</string>
+    <string name="donaciones">donaciones</string>
+    <string name="proyectos">proyectos</string>
+    <string name="title_activity_mapa">MapaActivity</string>
+    <string name="title_activity_login_failed">LoginFailedActivity</string>
+    <string name="try_to_login">Login again with facebook!</string>
+    <string name="login_failed_please_try_again">Login Failed! Please try again...</string>
 </resources>
