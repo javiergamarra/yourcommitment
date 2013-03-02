@@ -1,5 +1,6 @@
 package es.cylicon.yourcommitment.activity;
 
+import roboguice.activity.RoboFragmentActivity;
 import roboguice.inject.ContentView;
 import roboguice.inject.InjectView;
 import android.content.Intent;
@@ -12,7 +13,10 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
+import com.parse.GetCallback;
 import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.SaveCallback;
 
 import es.cylicon.yourcommitment.R;
@@ -20,7 +24,8 @@ import es.cylicon.yourcommitment.adapter.DonationAdapter;
 import es.cylicon.yourcommitment.model.User;
 
 @ContentView(R.layout.activity_user)
-public class UserActivity extends MenuActivity implements OnItemClickListener {
+public class UserActivity extends RoboFragmentActivity implements
+		OnItemClickListener {
 
 	private static final String MONEDA = " EUROS";
 	private static final String MONEDA_SIMBOLO = " €";
@@ -58,13 +63,23 @@ public class UserActivity extends MenuActivity implements OnItemClickListener {
 
 		final Double cantidad = user.getAmount();
 		amount.setText((cantidad == null ? 0 : cantidad.toString()) + MONEDA);
-		amountLeft.setText(user.getAmountLeft().toString() + MONEDA_SIMBOLO);
-		
+		amountLeft.setText(user.getAmountLeft() + MONEDA_SIMBOLO);
+
 		selector.setProgress(user.getAmount().intValue());
 		selector.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 
 			@Override
 			public void onStopTrackingTouch(final SeekBar seekBar) {
+				final ParseQuery query = new ParseQuery("user");
+				query.getInBackground(user.getId(), new GetCallback() {
+					public void done(ParseObject object, ParseException e) {
+						if (e == null) {
+							object.put("amount",
+									Double.valueOf(seekBar.getProgress()));
+							object.saveInBackground();
+						}
+					}
+				});
 				user.getUserObject().saveInBackground(new SaveCallback() {
 					public void done(ParseException e) {
 						user.getUserObject().put("amount",
@@ -83,8 +98,7 @@ public class UserActivity extends MenuActivity implements OnItemClickListener {
 					final int progress, final boolean fromUser) {
 				amount.setText(progress + MONEDA);
 				user.setAmount(Double.valueOf(seekBar.getProgress()));
-				amountLeft.setText(user.getAmountLeft().toString()
-						+ MONEDA_SIMBOLO);
+				amountLeft.setText(user.getAmountLeft() + MONEDA_SIMBOLO);
 			}
 		});
 

@@ -53,8 +53,23 @@ public class LoginActivity extends MenuActivity implements OnClickListener {
 					}
 				});
 
+		//login("soraya");
 	}
 
+	@SuppressWarnings("unused")
+	private void login(final String user) {
+		final ParseQuery query = new ParseQuery("user");
+		query.whereEqualTo("username", user).getFirstInBackground(
+				new GetCallback() {
+					@Override
+					public void done(final ParseObject userFound,
+							final ParseException e) {
+						processUser(null, userFound, user);
+					}
+				});
+	}
+
+	@SuppressWarnings("unused")
 	private void login(final ParseUser user) {
 		Log.e(TAG, "User logged in through Facebook!" + user.getUsername());
 
@@ -64,17 +79,20 @@ public class LoginActivity extends MenuActivity implements OnClickListener {
 					@Override
 					public void done(final ParseObject userFound,
 							final ParseException e) {
-						processUser(user, userFound);
+						processUser(user, userFound, user.getUsername());
 					}
 				});
 	}
 
-	private void processUser(final ParseUser user, final ParseObject userFound) {
+	private void processUser(final ParseUser user, final ParseObject userFound, final String userName) {
 		final User currentUser;
 		if (userFound == null) {
-			currentUser = new User(user.getUsername());
+			currentUser = new User(userName);
 			try {
-				currentUser.getUserObject().save();
+				final ParseObject usuario = new ParseObject("user");
+				usuario.put("username", userName);
+				usuario.put("amount", 0.0D);
+				usuario.save();
 			} catch (final ParseException e1) {
 				Toast.makeText(this, "No se ha podido guardar el usuario",
 						Toast.LENGTH_SHORT).show();

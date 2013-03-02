@@ -73,6 +73,9 @@ public class User implements Serializable {
 
 	public ParseObject getUserObject() {
 		final ParseObject user = new ParseObject("user");
+		System.out.println("ID: " + id);
+		System.out.println("username: " + username);
+		System.out.println("amount: " + amount);
 		user.put("objectId", id);
 		user.put("username", username);
 		user.put("amount", amount);
