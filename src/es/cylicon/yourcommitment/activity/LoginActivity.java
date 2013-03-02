@@ -10,7 +10,6 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.parse.GetCallback;
-import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseFacebookUtils;
 import com.parse.ParseObject;
@@ -30,22 +29,22 @@ public class LoginActivity extends MenuActivity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		layout.setOnClickListener(this);
-		ParseFacebookUtils.logIn(this, new LogInCallback() {
-			@Override
-			public void done(final ParseUser user, final ParseException err) {
-				if (user == null) {
-					Log.e(TAG, "Uh oh. The user cancelled the Facebook login.");
-					final Intent intent = new Intent(LoginActivity.this,
-							LoginFailedActivity.class);
-					intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-					startActivity(intent);
-				} else {
-					login(user);
-				}
-			}
-		});
+		// ParseFacebookUtils.logIn(this, new LogInCallback() {
+		// @Override
+		// public void done(final ParseUser user, final ParseException err) {
+		// if (user == null) {
+		// Log.e(TAG, "Uh oh. The user cancelled the Facebook login.");
+		// final Intent intent = new Intent(LoginActivity.this,
+		// LoginFailedActivity.class);
+		// intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+		// startActivity(intent);
+		// } else {
+		// login(user);
+		// }
+		// }
+		// });
 
-		//login("soraya");
+		login("soraya");
 	}
 
 	@SuppressWarnings("unused")
@@ -76,7 +75,8 @@ public class LoginActivity extends MenuActivity implements OnClickListener {
 				});
 	}
 
-	private void processUser(final ParseUser user, final ParseObject userFound, final String userName) {
+	private void processUser(final ParseUser user, final ParseObject userFound,
+			final String userName) {
 		final User currentUser;
 		if (userFound == null) {
 			currentUser = new User(userName);

@@ -28,7 +28,7 @@ public class UserActivity extends RoboFragmentActivity implements
 		OnItemClickListener {
 
 	private static final String MONEDA = " EUROS";
-	private static final String MONEDA_SIMBOLO = " â‚¬";
+	private static final String MONEDA_SIMBOLO = " €";
 	private static final int DETALLE_PROYECTO = 0;
 
 	@InjectView(R.id.userName)
@@ -72,7 +72,9 @@ public class UserActivity extends RoboFragmentActivity implements
 			public void onStopTrackingTouch(final SeekBar seekBar) {
 				final ParseQuery query = new ParseQuery("user");
 				query.getInBackground(user.getId(), new GetCallback() {
-					public void done(ParseObject object, ParseException e) {
+					@Override
+					public void done(final ParseObject object,
+							final ParseException e) {
 						if (e == null) {
 							object.put("amount",
 									Double.valueOf(seekBar.getProgress()));
@@ -81,7 +83,8 @@ public class UserActivity extends RoboFragmentActivity implements
 					}
 				});
 				user.getUserObject().saveInBackground(new SaveCallback() {
-					public void done(ParseException e) {
+					@Override
+					public void done(final ParseException e) {
 						user.getUserObject().put("amount",
 								Double.valueOf(seekBar.getProgress()));
 						user.getUserObject().saveInBackground();

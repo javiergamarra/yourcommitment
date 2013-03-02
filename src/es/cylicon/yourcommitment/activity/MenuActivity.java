@@ -30,7 +30,7 @@ public class MenuActivity extends RoboFragmentActivity {
 					.getFirst());
 		} catch (final ParseException e1) {
 			Toast.makeText(this,
-					"No se ha podido recuperar la información de proyectos",
+					"No se ha podido recuperar la informaciï¿½n de proyectos",
 					Toast.LENGTH_SHORT).show();
 		}
 		return new Proyect();
@@ -41,7 +41,7 @@ public class MenuActivity extends RoboFragmentActivity {
 		try {
 			final List<Donation> donations = new ArrayList<Donation>();
 			for (final ParseObject object : donationsQuery.whereEqualTo(
-					"user_id", userId).find()) {
+					"userId", userId).find()) {
 				final Donation donation = new Donation(object);
 				final Proyect proyect = getProjectForADonation(donation
 						.getProyectId());
@@ -51,7 +51,7 @@ public class MenuActivity extends RoboFragmentActivity {
 			return donations;
 		} catch (final ParseException e1) {
 			Toast.makeText(this,
-					"No se ha podido recuperar la información de donaciones",
+					"No se ha podido recuperar la informaciï¿½n de donaciones",
 					Toast.LENGTH_SHORT).show();
 		}
 		return new ArrayList<Donation>();
