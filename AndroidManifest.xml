@@ -19,7 +19,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="es.cylicon.yourcommitment.activity.MainActivity"
+            android:name="es.cylicon.yourcommitment.activity.LoginActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -56,6 +56,10 @@
         <activity
             android:name="es.cylicon.yourcommitment.MapActivity"
             android:label="@string/title_activity_mapa" >
+        </activity>
+        <activity
+            android:name="es.cylicon.yourcommitment.activity.LoginFailedActivity"
+            android:label="@string/title_activity_login_failed" >
         </activity>
     </application>
 </manifest>
