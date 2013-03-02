@@ -5,28 +5,27 @@
     android:background="@color/lightCream"
     android:orientation="vertical"
     android:padding="20dip" >
+
     <fragment
         android:id="@+id/proyectsActivity"
         android:name="es.cylicon.yourcommitment.activity.MenuFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <TextView
         android:id="@+id/proyectName"
+        style="@style/tituloTabla"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="20dip"
-        android:text="@string/nombre_del_proyecto"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:text="@string/nombre_del_proyecto" />
+
     <TextView
         android:id="@+id/address"
+        style="@style/SubTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/mozambique"
-        android:textColor="@color/orange"
-        android:textSize="14sp" />
+        android:text="@string/mozambique" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,61 +34,63 @@
         android:gravity="center"
         android:padding="15dip"
         android:text="@string/descripci_n_del_proyecto" />
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:gravity="left"
-        android:padding="15dip"
-        android:text="@string/lorem" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:gravity="left"
+            android:padding="15dip"
+            android:text="@string/lorem" />
+    </ScrollView>
+
     <ProgressBar
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="30dip"
         android:layout_marginTop="30dip"
         android:progress="50" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:padding="15dip"
-            android:text="1" />
+            android:text="@string/terminado" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:padding="15dip"
-            android:text="1" />
+            android:text="@string/recaudado" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:padding="15dip"
-            android:text="1" />
+            android:text="@string/total" />
     </LinearLayout>
-    <Button android:padding="15dip"
+
+    <Button
+        style="@style/BotonDonar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="15dip"
-        android:layout_marginTop="15dip"
-        android:background="@color/green"
-        android:drawableLeft="@android:drawable/ic_input_add"
-        android:drawablePadding="10dip"
-        android:gravity="center"
-        android:text="@string/donar"
-        android:textColor="@android:color/white" />
-    <ListView
-        android:id="@android:id/list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </ListView>
+        android:text="@string/donar" />
+
 </LinearLayout>
