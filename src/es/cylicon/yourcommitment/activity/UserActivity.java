@@ -4,10 +4,12 @@ import roboguice.activity.RoboFragmentActivity;
 import roboguice.inject.ContentView;
 import roboguice.inject.InjectView;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
@@ -37,6 +39,9 @@ public class UserActivity extends RoboFragmentActivity implements
 
 	@InjectView(R.id.saldo)
 	private TextView amount;
+	
+	@InjectView(R.id.userEmail)
+	private TextView userEmail;
 
 	@InjectView(R.id.amountLeft)
 	private TextView amountLeft;
@@ -49,6 +54,7 @@ public class UserActivity extends RoboFragmentActivity implements
 
 	private User user;
 	private DonationAdapter adapter;
+	
 
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
@@ -57,7 +63,8 @@ public class UserActivity extends RoboFragmentActivity implements
 		user = application.getCurrentUser();
 		if (user != null) {
 			userName.setText(user.getUsername());
-
+			userEmail.setText(user.getEmail());
+			
 			final Double cantidad = user.getAmount();
 			amount.setText((cantidad == null ? 0 : cantidad.toString())
 					+ MONEDA);
@@ -129,6 +136,13 @@ public class UserActivity extends RoboFragmentActivity implements
 			Toast.makeText(this, "No se ha podido recuperar el proyecto",
 					Toast.LENGTH_SHORT).show();
 		}
+	}
+	
+	public void irPaypal(View v)
+	{
+		Intent intent = new Intent(Intent.ACTION_VIEW);
+		intent.setData(Uri.parse("http://www.paypal.com"));
+		startActivity(intent);
 	}
 
 }
