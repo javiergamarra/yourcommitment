@@ -10,6 +10,7 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
+import es.cylicon.yourcommitment.model.Category;
 import es.cylicon.yourcommitment.model.Donation;
 import es.cylicon.yourcommitment.model.Proyect;
 
@@ -21,6 +22,18 @@ public class MenuActivity extends RoboFragmentActivity {
 	public void onBackPressed() {
 		super.onBackPressed();
 		overridePendingTransition(0, 0);
+	}
+
+	protected List<Category> getCategories() {
+		final ParseQuery categoryQuery = new ParseQuery("Category");
+		try {
+			return Category.create(categoryQuery.find());
+		} catch (final ParseException e1) {
+			Toast.makeText(this,
+					"No se ha podido recuperar la información de categorías",
+					Toast.LENGTH_SHORT).show();
+		}
+		return new ArrayList<Category>();
 	}
 
 	protected Proyect getProjectForADonation(final String projectId) {

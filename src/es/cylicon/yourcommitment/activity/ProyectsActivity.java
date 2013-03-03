@@ -53,7 +53,9 @@ public class ProyectsActivity extends MenuActivity implements
 					final ParseException e) {
 				if (e == null) {
 					for (final ParseObject parseProyect : parseProyects) {
-						proyects.add(new Proyect(parseProyect));
+						final YourCommitmentApplication application = (YourCommitmentApplication) getApplication();
+						proyects.add(new Proyect(parseProyect, application
+								.getCategories()));
 						adapter.notifyDataSetChanged();
 					}
 				} else {

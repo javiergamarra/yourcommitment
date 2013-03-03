@@ -45,10 +45,9 @@ public class UpdateAdapter extends ArrayAdapter<Update> {
 				.findViewById(R.id.imageUpdate);
 
 		try {
-			drawable = Drawable
-					.createFromStream(
-							context.getAssets().open(
-									"test/" + update.getImage()), null);
+			drawable = Drawable.createFromStream(
+					context.getAssets().open("test/" + update.getImagen()),
+					null);
 			image.setImageDrawable(drawable);
 			descripcion.setText(update.getDescription());
 

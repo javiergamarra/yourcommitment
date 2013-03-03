@@ -10,13 +10,13 @@ public class Update implements Serializable {
 
 	private String id;
 	private String description;
-	private String image;
+	private String imagen;
 	private String proyectId;
 
 	public Update(final ParseObject parseProyect) {
 		id = parseProyect.getObjectId();
 		setDescription(parseProyect.getString("description"));
-		setImage(parseProyect.getString("image"));
+		setImagen(parseProyect.getString("imagen"));
 		setProyectId(parseProyect.getString("proyectId"));
 	}
 
@@ -26,14 +26,6 @@ public class Update implements Serializable {
 
 	public void setDescription(final String description) {
 		this.description = description;
-	}
-
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(final String image) {
-		this.image = image;
 	}
 
 	public String getProyectId() {
@@ -50,6 +42,14 @@ public class Update implements Serializable {
 
 	public void setId(final String id) {
 		this.id = id;
+	}
+
+	public String getImagen() {
+		return imagen;
+	}
+
+	public void setImagen(final String imagen) {
+		this.imagen = imagen;
 	}
 
 }

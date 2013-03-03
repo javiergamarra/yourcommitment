@@ -147,7 +147,8 @@ public class DetailProyectActivity extends MenuActivity implements
 					final Double amount = Double.parseDouble(textAmount);
 					if (currentUser.validAmount(amount)) {
 						insertDonation(amount, currentUser);
-
+						application.registerForPushForChannelAndActivity(
+								proyect.getName(), ProyectsActivity.class);
 						dialogNew.dismiss();
 					} else {
 						Toast.makeText(DetailProyectActivity.this,

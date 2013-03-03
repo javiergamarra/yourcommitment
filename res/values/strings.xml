@@ -54,4 +54,5 @@
     <string name="tituloONGs">Organizations</string>
     <string name="ongs">ONGs</string>
     <string name="introduce_una_cantidad_">Introduce una cantidad...</string>
+    <string name="enviar_una_notificaci_n">Enviar una notificación</string>
 </resources>

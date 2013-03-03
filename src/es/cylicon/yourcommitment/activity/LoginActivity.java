@@ -10,6 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.parse.GetCallback;
+import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseFacebookUtils;
 import com.parse.ParseObject;
@@ -29,22 +30,25 @@ public class LoginActivity extends MenuActivity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		layout.setOnClickListener(this);
-		// ParseFacebookUtils.logIn(this, new LogInCallback() {
-		// @Override
-		// public void done(final ParseUser user, final ParseException err) {
-		// if (user == null) {
-		// Log.e(TAG, "Uh oh. The user cancelled the Facebook login.");
-		// final Intent intent = new Intent(LoginActivity.this,
-		// LoginFailedActivity.class);
-		// intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-		// startActivity(intent);
-		// } else {
-		// login(user);
-		// }
-		// }
-		// });
+		loginFacebook();
+		// login("soraya");
+	}
 
-		login("soraya");
+	private void loginFacebook() {
+		ParseFacebookUtils.logIn(this, new LogInCallback() {
+			@Override
+			public void done(final ParseUser user, final ParseException err) {
+				if (user == null) {
+					Log.e(TAG, "Uh oh. The user cancelled the Facebook login.");
+					final Intent intent = new Intent(LoginActivity.this,
+							LoginFailedActivity.class);
+					intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+					startActivity(intent);
+				} else {
+					login(user);
+				}
+			}
+		});
 	}
 
 	@SuppressWarnings("unused")
@@ -85,6 +89,16 @@ public class LoginActivity extends MenuActivity implements OnClickListener {
 				usuario.put("username", userName);
 				usuario.put("amount", 0.0D);
 				usuario.save();
+				final ParseQuery query = new ParseQuery("user");
+				query.whereEqualTo("username", user.getUsername())
+						.getFirstInBackground(new GetCallback() {
+							@Override
+							public void done(final ParseObject userFound,
+									final ParseException e) {
+								final YourCommitmentApplication application = (YourCommitmentApplication) getApplication();
+								application.setCurrentUser(new User(userName));
+							}
+						});
 			} catch (final ParseException e1) {
 				Toast.makeText(this, "No se ha podido guardar el usuario",
 						Toast.LENGTH_SHORT).show();
@@ -97,6 +111,7 @@ public class LoginActivity extends MenuActivity implements OnClickListener {
 		Toast.makeText(LoginActivity.this, "Bienvenido! ", Toast.LENGTH_SHORT)
 				.show();
 		final YourCommitmentApplication application = (YourCommitmentApplication) getApplication();
+		application.setCategories(getCategories());
 
 		application.setCurrentUser(currentUser);
 		startActivity(new Intent(LoginActivity.this, ProyectsActivity.class));

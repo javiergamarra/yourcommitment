@@ -18,6 +18,7 @@ public class Proyect implements Serializable {
 	private String address;
 	private Category category;
 	private List<Update> updates;
+	private String categoryId;
 
 	public Proyect(final String name) {
 		this.name = name;
@@ -30,10 +31,21 @@ public class Proyect implements Serializable {
 		setAmount(parseProyect.getDouble("amount"));
 		setTotalAmount(parseProyect.getDouble("totalAmount"));
 		setAddress(parseProyect.getString("address"));
+		categoryId = parseProyect.getString("categoryId");
 	}
 
 	public Proyect() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public Proyect(final ParseObject parseProyect,
+			final List<Category> categories) {
+		this(parseProyect);
+		for (final Category category : categories) {
+			if (categoryId != null && categoryId.equals(category.getId())) {
+				this.category = category;
+			}
+		}
 	}
 
 	public String getId() {
@@ -122,5 +134,13 @@ public class Proyect implements Serializable {
 
 	private double formatted(final Double percentage) {
 		return new Double(new Double(percentage * 100).intValue() / 100.0D);
+	}
+
+	public String getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(final String categoryId) {
+		this.categoryId = categoryId;
 	}
 }

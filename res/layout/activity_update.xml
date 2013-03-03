@@ -1,5 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Fondo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -9,6 +10,13 @@
         android:name="es.cylicon.yourcommitment.activity.MenuFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/push"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:textColor="@android:color/white"
+        android:text="@string/enviar_una_notificaci_n" />
     <TextView
         android:id="@+id/proyectName"
         style="@style/tituloTabla"
