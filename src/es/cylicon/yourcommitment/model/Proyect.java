@@ -13,10 +13,9 @@ public class Proyect implements Serializable {
 	private String id;
 	private String name;
 	private String description;
+	private Double amount;
 	private Double totalAmount;
-	private Double progress;
 	private String address;
-	private Double budget;
 	private Category category;
 	private List<Update> updates;
 
@@ -28,8 +27,8 @@ public class Proyect implements Serializable {
 		setId(parseProyect.getObjectId());
 		setName(parseProyect.getString("name"));
 		setDescription(parseProyect.getString("description"));
+		setAmount(parseProyect.getDouble("amount"));
 		setTotalAmount(parseProyect.getDouble("totalAmount"));
-		setProgress(parseProyect.getDouble("progress"));
 		setAddress(parseProyect.getString("address"));
 	}
 
@@ -77,14 +76,6 @@ public class Proyect implements Serializable {
 		this.totalAmount = totalAmount;
 	}
 
-	public Double getProgress() {
-		return progress;
-	}
-
-	public void setProgress(final Double progress) {
-		this.progress = progress;
-	}
-
 	public String getAddress() {
 		return address;
 	}
@@ -109,12 +100,27 @@ public class Proyect implements Serializable {
 		return proyects;
 	}
 
-	public Double getBudget() {
-		return budget;
+	public Double getAmount() {
+		return amount;
 	}
 
-	public void setBudget(final Double budget) {
-		this.budget = budget;
+	public void setAmount(final Double amount) {
+		this.amount = amount;
 	}
 
+	public String getPercentage() {
+		return getDoublePercentage().toString();
+	}
+
+	public Double getDoublePercentage() {
+		if (amount == null || totalAmount == null) {
+			return 0D;
+		}
+		final double percentage = amount / totalAmount * 100;
+		return percentage > 100 ? 100D : formatted(percentage);
+	}
+
+	private double formatted(final Double percentage) {
+		return new Double(new Double(percentage * 100).intValue() / 100.0D);
+	}
 }

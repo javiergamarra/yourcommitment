@@ -30,7 +30,8 @@
     <string name="try_to_login">Log again with facebook!</string>
     <string name="login_failed_please_try_again">Login Failed! Please try again...</string>
     <string name="map">AQUI VA UN MAPA</string>
-    <string name="_0_0_">0.0€</string>
+    <string name="zeroEuros">0.0&#8364;</string>
+    <string name="euros">&#8364;</string>
     <string name="tituloTablaDonaciones">Lista de Donaciones</string>
     <string name="userName">Nombre</string>
     <string name="userEmail">E-mail</string>
@@ -47,7 +48,10 @@
     <string name="terminado">Terminado</string>
     <string name="recaudado">Recaudado</string>
     <string name="total">Total</string>
-    <string name="ver_actualizaciones">Ver actualizaciones</string>
+    <string name="ver_actualizaciones">actualizaciones</string>
     <string name="title_activity_update">UpdateActivity</string>
     <string name="tituloTablaActualizaciones">Lista de actualizaciones para el proyecto</string>
+    <string name="tituloONGs">Organizations</string>
+    <string name="ongs">ONGs</string>
+    <string name="introduce_una_cantidad_">Introduce una cantidad...</string>
 </resources>

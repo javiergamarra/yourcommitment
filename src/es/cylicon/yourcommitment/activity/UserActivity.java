@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.GetCallback;
 import com.parse.ParseException;
@@ -21,6 +22,7 @@ import com.parse.SaveCallback;
 
 import es.cylicon.yourcommitment.R;
 import es.cylicon.yourcommitment.adapter.DonationAdapter;
+import es.cylicon.yourcommitment.model.Proyect;
 import es.cylicon.yourcommitment.model.User;
 
 @ContentView(R.layout.activity_user)
@@ -28,14 +30,10 @@ public class UserActivity extends RoboFragmentActivity implements
 		OnItemClickListener {
 
 	private static final String MONEDA = " EUROS";
-	private static final String MONEDA_SIMBOLO = " €";
 	private static final int DETALLE_PROYECTO = 0;
 
 	@InjectView(R.id.userName)
 	private TextView userName;
-
-	@InjectView(R.id.userEmail)
-	private TextView userEmail;
 
 	@InjectView(R.id.saldo)
 	private TextView amount;
@@ -57,15 +55,18 @@ public class UserActivity extends RoboFragmentActivity implements
 		super.onCreate(savedInstanceState);
 		final YourCommitmentApplication application = (YourCommitmentApplication) getApplication();
 		user = application.getCurrentUser();
+		if (user != null) {
+			userName.setText(user.getUsername());
 
-		userName.setText(user.getUsername());
-		userEmail.setText(user.getEmail());
+			final Double cantidad = user.getAmount();
+			amount.setText((cantidad == null ? 0 : cantidad.toString())
+					+ MONEDA);
+			amountLeft
+					.setText(user.getAmountLeft() + getString(R.string.euros));
 
-		final Double cantidad = user.getAmount();
-		amount.setText((cantidad == null ? 0 : cantidad.toString()) + MONEDA);
-		amountLeft.setText(user.getAmountLeft() + MONEDA_SIMBOLO);
+			selector.setProgress(user.getAmount().intValue());
 
-		selector.setProgress(user.getAmount().intValue());
+		}
 		selector.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 
 			@Override
@@ -101,7 +102,8 @@ public class UserActivity extends RoboFragmentActivity implements
 					final int progress, final boolean fromUser) {
 				amount.setText(progress + MONEDA);
 				user.setAmount(Double.valueOf(seekBar.getProgress()));
-				amountLeft.setText(user.getAmountLeft() + MONEDA_SIMBOLO);
+				amountLeft.setText(user.getAmountLeft()
+						+ getString(R.string.euros));
 			}
 		});
 
@@ -114,9 +116,19 @@ public class UserActivity extends RoboFragmentActivity implements
 	public void onItemClick(final AdapterView<?> arg0, final View arg1,
 			final int posicion, final long arg3) {
 		final Intent intent = new Intent(this, DetailProyectActivity.class);
-		intent.putExtra("proyectId", user.getDonations().get(posicion)
-				.getProyect().getId());
-		startActivityForResult(intent, DETALLE_PROYECTO);
+		final ParseQuery query = new ParseQuery("Proyect");
+		ParseObject proyect;
+		try {
+			proyect = query.whereEqualTo("objectId",
+					user.getDonations().get(posicion).getProyect().getId())
+					.getFirst();
+			intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+			intent.putExtra("proyect", new Proyect(proyect));
+			startActivityForResult(intent, DETALLE_PROYECTO);
+		} catch (final ParseException e) {
+			Toast.makeText(this, "No se ha podido recuperar el proyecto",
+					Toast.LENGTH_SHORT).show();
+		}
 	}
 
 }

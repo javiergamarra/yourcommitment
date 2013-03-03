@@ -11,9 +11,9 @@
 
         <TextView
             style="@style/titulo"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="4"
+            android:layout_weight="2"
             android:background="@color/orange"
             android:drawableLeft="@drawable/logobar"
             android:text="@string/name" />
@@ -21,11 +21,11 @@
         <TextView
             android:id="@+id/amountLeft"
             style="@style/titulo"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/darkOrange"
-            android:text="@string/_0_0_" />
+            android:text="@string/zeroEuros" />
     </LinearLayout>
 
     <LinearLayout
@@ -36,7 +36,7 @@
         <TextView
             android:id="@+id/profile"
             style="@style/itemMenu"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:drawableLeft="@drawable/profileicon"
@@ -45,7 +45,7 @@
         <TextView
             android:id="@+id/proyects"
             style="@style/itemMenu"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:drawableLeft="@drawable/acceptprojectsicon"
@@ -54,11 +54,20 @@
         <TextView
             android:id="@+id/map"
             style="@style/itemMenu"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:drawableLeft="@android:drawable/btn_star"
             android:text="@string/mundo" />
+        
+        <TextView
+            android:id="@+id/ongs"
+            style="@style/itemMenu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/proyectsicon"
+            android:text="@string/ongs" />
     </LinearLayout>
 
 </LinearLayout>

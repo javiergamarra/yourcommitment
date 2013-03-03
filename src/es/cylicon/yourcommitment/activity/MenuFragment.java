@@ -23,6 +23,9 @@ public class MenuFragment extends RoboFragment implements OnClickListener {
 	@InjectView(R.id.proyects)
 	private TextView proyects;
 
+	@InjectView(R.id.ongs)
+	private TextView ongs;
+
 	@InjectView(R.id.amountLeft)
 	private TextView amountLeft;
 
@@ -38,6 +41,7 @@ public class MenuFragment extends RoboFragment implements OnClickListener {
 		profile.setOnClickListener(this);
 		proyects.setOnClickListener(this);
 		map.setOnClickListener(this);
+		ongs.setOnClickListener(this);
 		clickMenu();
 		final YourCommitmentApplication application = (YourCommitmentApplication) getActivity()
 				.getApplication();
@@ -58,6 +62,9 @@ public class MenuFragment extends RoboFragment implements OnClickListener {
 		} else if (getActivity().findViewById(R.id.mapa) != null) {
 			map.setBackgroundColor(getActivity().getResources().getColor(
 					R.color.lightCream));
+		} else if (getActivity().findViewById(R.id.organizationsActivity) != null) {
+			ongs.setBackgroundColor(getActivity().getResources().getColor(
+					R.color.lightCream));
 		}
 
 	}
@@ -77,6 +84,8 @@ public class MenuFragment extends RoboFragment implements OnClickListener {
 			return UserActivity.class;
 		case R.id.proyects:
 			return ProyectsActivity.class;
+		case R.id.ongs:
+			return ONGSActivity.class;
 		default:
 			break;
 		}

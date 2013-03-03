@@ -17,16 +17,14 @@ public class Donation implements Serializable {
 	private Double amount;
 	private Proyect proyect;
 
-	
 	public ParseObject getDonationObject() {
 		final ParseObject donation = new ParseObject("Donation");
 		donation.put("name", name);
-		donation.put("description", description);
 		donation.put("amount", amount);
-		donation.put("proyect", proyect);
+		donation.put("proyectId", proyectId);
+		donation.put("userId", userId);
 		return donation;
 	}
-	
 
 	public Donation(final ParseObject parseDonation) {
 		setId(parseDonation.getString("objectId"));
@@ -43,10 +41,11 @@ public class Donation implements Serializable {
 	}
 
 	public Donation(final String name, final String description,
-			final String proyectId) {
+			final String proyectId, final String userId) {
 		this.name = name;
 		this.description = description;
 		this.proyectId = proyectId;
+		this.userId = userId;
 	}
 
 	public Donation(final ParseObject object, final List<Proyect> proyects) {

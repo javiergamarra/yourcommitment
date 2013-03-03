@@ -15,7 +15,6 @@ public class User implements Serializable {
 	private String email;
 	private Double amount = 0.0D;
 	private List<Donation> donations = new ArrayList<Donation>();
-	private List<Proyect> proyects = new ArrayList<Proyect>();
 
 	public User(final String username) {
 		this.username = username;
@@ -51,7 +50,9 @@ public class User implements Serializable {
 		Double amountLeft = amount;
 		if (!donations.isEmpty()) {
 			for (final Donation donation : donations) {
-				amountLeft -= donation.getAmount();
+				if (donation.getAmount() != null) {
+					amountLeft -= donation.getAmount();
+				}
 			}
 		}
 		return (int) Math.floor(amountLeft);
@@ -84,20 +85,16 @@ public class User implements Serializable {
 		return user;
 	}
 
-	public List<Proyect> getProyects() {
-		return proyects;
-	}
-
-	public void setProyects(final List<Proyect> proyects) {
-		this.proyects = proyects;
-	}
-
 	public String getId() {
 		return id;
 	}
 
 	public void setId(final String id) {
 		this.id = id;
+	}
+
+	public boolean validAmount(final Double newAmount) {
+		return amount - newAmount > 0;
 	}
 
 }

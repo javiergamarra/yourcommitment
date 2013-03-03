@@ -5,7 +5,6 @@
     android:background="@color/lightCream"
     android:orientation="vertical"
     android:padding="20dip" >
-
     <TextView
         android:id="@+id/donateProjectName"
         android:layout_width="match_parent"
@@ -15,7 +14,6 @@
         android:text="@string/nombre_del_proyecto"
         android:textSize="18sp"
         android:textStyle="bold" />
-
     <TextView
         android:id="@+id/donateUserBudget"
         android:layout_width="match_parent"
@@ -25,8 +23,7 @@
         android:textColor="@color/orange"
         android:textSize="14sp" />
 
-    <EditText
-        android:id="@+id/donateUserDonation"
+    <EditText android:id="@+id/donateUserDonation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dip"
@@ -34,18 +31,16 @@
         android:gravity="center"
         android:padding="15dip"
         android:inputType="number"
-        android:text="Enter" />
+        android:hint="@string/introduce_una_cantidad_" />
 
     <Button
         android:id="@+id/confirmDonateButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="15dip"
         android:layout_marginTop="15dip"
         android:background="@color/green"
-        android:drawableLeft="@android:drawable/ic_input_add"
-        android:drawablePadding="10dip"
         android:gravity="center"
         android:padding="15dip"
         android:text="@string/confirm_donar"

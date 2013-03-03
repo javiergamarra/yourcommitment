@@ -1,116 +1,34 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lightCream"
-    android:orientation="vertical" >
-
-    <fragment
-        android:id="@+id/proyectsActivity"
-        android:name="es.cylicon.yourcommitment.activity.MenuFragment"
-<<<<<<< HEAD
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/proyectName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="20dip"
-        android:text="@string/nombre_del_proyecto"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/mozambique"
-        android:textColor="@color/orange"
-        android:textSize="14sp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dip"
-        android:background="@color/lightBrown"
-        android:gravity="center"
-        android:padding="15dip"
-        android:text="@string/descripci_n_del_proyecto" />
-
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        android:gravity="left"
-        android:padding="15dip"
-        android:text="@string/lorem" />
-
-    <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="30dip"
-        android:layout_marginTop="30dip"
-        android:progress="50" />
-
+    android:background="@color/lightCream" >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-=======
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="20dip" >
->>>>>>> 8a5b64e4e1ffe0e2a18f52e035d297c1ee5c5f4a
-
+        android:orientation="vertical" >
+        <fragment
+            android:id="@+id/proyectsActivity"
+            android:name="es.cylicon.yourcommitment.activity.MenuFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/proyectName"
+            style="@style/tituloTabla"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nombre_del_proyecto" />
+        <TextView
+            android:id="@+id/address"
+            style="@style/SubTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mozambique" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
-            android:layout_margin="20dip"
-            android:orientation="horizontal" >
-
-            <Button
-                android:id="@+id/donateButton"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="5dip"
-                android:layout_weight="1"
-                android:background="@color/green"
-                android:gravity="center"
-                android:padding="10dip"
-                android:text="@string/donar"
-                android:textColor="@android:color/white" />
-
-            <Button
-                android:id="@+id/updates"
-                android:layout_width="0dip"
-=======
-            android:orientation="vertical" >
-
-            <TextView
-                android:id="@+id/proyectName"
-                style="@style/tituloTabla"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/nombre_del_proyecto" />
-
-            <TextView
-                android:id="@+id/address"
-                style="@style/SubTitulo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/mozambique" />
-
+            android:orientation="vertical"
+            android:padding="20dip" >
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -119,7 +37,6 @@
                 android:gravity="center"
                 android:padding="15dip"
                 android:text="@string/descripci_n_del_proyecto" />
-
             <TextView
                 android:id="@+id/description"
                 android:layout_width="match_parent"
@@ -128,71 +45,92 @@
                 android:gravity="left"
                 android:padding="15dip"
                 android:text="@string/lorem" />
-
             <ProgressBar
-                style="?android:attr/progressBarStyleHorizontal"
+                android:id="@+id/progressBar"
+                style="@style/tallerBarStyle"
                 android:layout_width="match_parent"
-                android:layout_height="30dip"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="30dip"
                 android:progress="50" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:baselineAligned="false"
                 android:orientation="horizontal" >
-
-                <TextView
-                    android:id="@+id/terminado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="15dip"
-                    android:text="@string/terminado" />
-
-                <TextView
-                    android:id="@+id/recaudado"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dip"
-                    android:background="@color/lightBrown"
-                    android:gravity="center"
-                    android:padding="15dip"
-                    android:text="@string/recaudado" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
->>>>>>> 8a5b64e4e1ffe0e2a18f52e035d297c1ee5c5f4a
-                android:layout_height="wrap_content"
-                android:layout_margin="20dip"
-                android:orientation="horizontal" >
-
-                <Button
-                    style="@style/BotonDonar"
+                <LinearLayout
+                    style="@style/progresoBarra"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/donar" />
-
-                <Button
-                    android:id="@+id/updates"
+                    android:layout_weight="1" >
+                    <TextView
+                        android:id="@+id/terminado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="22sp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/terminado" />
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/progresoBarra"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="15dip"
-                    android:layout_marginTop="15dip"
-                    android:background="@color/green"
-                    android:drawableLeft="@android:drawable/ic_input_add"
-                    android:text="@string/ver_actualizaciones" />
+                    android:layout_weight="1" >
+                    <TextView
+                        android:id="@+id/recaudado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="22sp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/recaudado" />
+                </LinearLayout>
+                <LinearLayout
+                    style="@style/progresoBarra"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" >
+                    <TextView
+                        android:id="@+id/total"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="22sp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/total" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-<<<<<<< HEAD
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dip"
+            android:orientation="horizontal" >
+            <Button
+                android:id="@+id/donateButton"
+                style="@style/BotonDonar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="@string/donar" />
+            <Button
+                android:id="@+id/updates"
+                style="@style/BotonDonar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="@string/ver_actualizaciones" />
+        </LinearLayout>
     </LinearLayout>
-
 </ScrollView>
-=======
-    </ScrollView>
-
-</LinearLayout>
-
->>>>>>> 8a5b64e4e1ffe0e2a18f52e035d297c1ee5c5f4a
