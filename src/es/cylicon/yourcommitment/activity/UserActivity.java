@@ -38,7 +38,7 @@ public class UserActivity extends RoboFragmentActivity implements
 
 	@InjectView(R.id.saldo)
 	private TextView amount;
-	
+
 	@InjectView(R.id.userEmail)
 	private TextView userEmail;
 
@@ -53,7 +53,6 @@ public class UserActivity extends RoboFragmentActivity implements
 
 	private User user;
 	private DonationAdapter adapter;
-	
 
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
@@ -63,7 +62,7 @@ public class UserActivity extends RoboFragmentActivity implements
 		if (user != null) {
 			userName.setText(user.getUsername());
 			userEmail.setText(user.getEmail());
-			
+
 			final Double cantidad = user.getAmount();
 			amount.setText((cantidad == null ? 0 : cantidad.toString())
 					+ MONEDA);
@@ -136,10 +135,9 @@ public class UserActivity extends RoboFragmentActivity implements
 					Toast.LENGTH_SHORT).show();
 		}
 	}
-	
-	public void irPaypal(View v)
-	{
-		Intent intent = new Intent(Intent.ACTION_VIEW);
+
+	public void irPaypal(final View v) {
+		final Intent intent = new Intent(Intent.ACTION_VIEW);
 		intent.setData(Uri.parse("http://www.paypal.com"));
 		startActivity(intent);
 	}
