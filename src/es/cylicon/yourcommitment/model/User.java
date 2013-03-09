@@ -47,7 +47,7 @@ public class User implements Serializable {
 	}
 
 	public Integer getAmountLeft() {
-		Double amountLeft = amount;
+		Double amountLeft = amount == null ? 0.0D : amount;
 		if (!donations.isEmpty() && amount != null) {
 			for (final Donation donation : donations) {
 				if (donation.getAmount() != null) {
@@ -56,7 +56,7 @@ public class User implements Serializable {
 			}
 			return (int) Math.floor(amountLeft);
 		} else {
-			return 0;
+			return amount.intValue();
 		}
 	}
 
