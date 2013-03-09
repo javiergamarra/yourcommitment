@@ -18,6 +18,7 @@ public class Proyect implements Serializable {
 	private String address;
 	private Category category;
 	private List<Update> updates;
+	private String channelName;
 	private String categoryId;
 
 	public Proyect(final String name) {
@@ -32,6 +33,7 @@ public class Proyect implements Serializable {
 		setTotalAmount(parseProyect.getDouble("totalAmount"));
 		setAddress(parseProyect.getString("address"));
 		categoryId = parseProyect.getString("categoryId");
+		channelName = parseProyect.getString("channelName");
 	}
 
 	public Proyect() {
@@ -142,5 +144,13 @@ public class Proyect implements Serializable {
 
 	public void setCategoryId(final String categoryId) {
 		this.categoryId = categoryId;
+	}
+
+	public String getChannelName() {
+		return channelName;
+	}
+
+	public void setChannelName(final String channelName) {
+		this.channelName = channelName;
 	}
 }

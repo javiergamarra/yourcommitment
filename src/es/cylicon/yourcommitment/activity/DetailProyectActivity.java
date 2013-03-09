@@ -148,7 +148,8 @@ public class DetailProyectActivity extends MenuActivity implements
 					if (currentUser.validAmount(amount)) {
 						insertDonation(amount, currentUser);
 						application.registerForPushForChannelAndActivity(
-								proyect.getName(), ProyectsActivity.class);
+								proyect.getChannelName(),
+								ProyectsActivity.class);
 						dialogNew.dismiss();
 					} else {
 						Toast.makeText(DetailProyectActivity.this,

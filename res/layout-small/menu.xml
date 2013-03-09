@@ -3,12 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical" >
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
-
         <TextView
             style="@style/titulo"
             android:layout_width="0dp"
@@ -18,7 +16,6 @@
             android:drawableLeft="@drawable/logobar"
             android:text="@string/name"
             android:textSize="18sp" />
-
         <TextView
             android:id="@+id/amountLeft"
             style="@style/titulo"
@@ -29,12 +26,10 @@
             android:text="@string/zeroEuros"
             android:textSize="18sp" />
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
-
         <TextView
             android:id="@+id/profile"
             style="@style/itemMenu"
@@ -44,7 +39,6 @@
             android:drawablePadding="0dp"
             android:drawableTop="@drawable/profileicon"
             android:padding="5dip" />
-
         <TextView
             android:id="@+id/proyects"
             style="@style/itemMenu"
@@ -54,7 +48,6 @@
             android:drawablePadding="0dp"
             android:drawableTop="@drawable/acceptprojectsicon"
             android:padding="5dip" />
-
         <TextView
             android:id="@+id/map"
             style="@style/itemMenu"
@@ -64,7 +57,6 @@
             android:drawablePadding="0dp"
             android:drawableTop="@android:drawable/btn_star"
             android:padding="5dip" />
-
         <TextView
             android:id="@+id/ongs"
             style="@style/itemMenu"
@@ -75,5 +67,4 @@
             android:drawableTop="@drawable/proyectsicon"
             android:padding="5dip" />
     </LinearLayout>
-
 </LinearLayout>
